@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
 class PageBuilder extends StatelessWidget {
@@ -30,7 +31,8 @@ class PageBuilder extends StatelessWidget {
           ),
           Text(
             title,
-            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            style:
+                GoogleFonts.lato(fontSize: 24, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
           const SizedBox(
@@ -38,7 +40,7 @@ class PageBuilder extends StatelessWidget {
           ),
           Text(
             subtitle,
-            style: const TextStyle(fontSize: 18, color: Colors.grey),
+            style: GoogleFonts.lato(fontSize: 18, color: Colors.grey),
             textAlign: TextAlign.center,
           ),
         ],
@@ -73,16 +75,15 @@ class UniquePageBuider extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Text(
-            uniqueTitle,
-            style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
+          Text(uniqueTitle,
+              style: GoogleFonts.lato(
+                  fontSize: 24, fontWeight: FontWeight.bold)),
           const SizedBox(
             height: 10,
           ),
           Text(
             uniqueSubTitle,
-            style: const TextStyle(fontSize: 18, color: Colors.grey),
+            style: GoogleFonts.lato(fontSize: 18, color: Colors.grey),
             textAlign: TextAlign.center,
           ),
         ],

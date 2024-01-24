@@ -3,6 +3,7 @@ import 'package:chatterbox/screens/login_screen.dart';
 import 'package:chatterbox/utils/page_bulider_method.dart';
 import 'package:chatterbox/widgets/page_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -78,9 +79,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     onPressed: () {
                       controller.jumpToPage(2);
                     },
-                    child: const Text(
+                    child: Text(
                       "Skip",
-                      style: TextStyle(color: ColorPallets.darkpurpleColor),
+                      style: GoogleFonts.lato(
+                          fontWeight: FontWeight.w700,
+                          color: ColorPallets.darkpurpleColor),
                     ))),
         Positioned(
             bottom: 30,
@@ -104,14 +107,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 return const LoginScreen();
                               }));
                             },
-                            child: const Row(
+                            child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text("Get Started"),
-                                SizedBox(
+                                Text(
+                                  "Get Started",
+                                  style: GoogleFonts.lato(
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                const SizedBox(
                                   width: 5,
                                 ),
-                                Icon(Icons.arrow_forward_ios_rounded),
+                                const Icon(Icons.arrow_forward_ios_rounded),
                               ],
                             )),
                       )

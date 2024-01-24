@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -18,9 +19,12 @@ class LoginScreen extends StatelessWidget {
           const SizedBox(
             height: 3,
           ),
-          const Text(
+           Text(
             "Welcome to Chatter Box",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+            style: GoogleFonts.lato(
+              fontSize: 25,
+              fontWeight: FontWeight.bold
+            ),
           )
         ],
       ),
