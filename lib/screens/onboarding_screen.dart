@@ -73,7 +73,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ? const Text("")
                 : ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: ColorPallets.litepurpleColor,
+                        backgroundColor: ColorPallets.litepurpleColor1,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(17))),
                     onPressed: () {
