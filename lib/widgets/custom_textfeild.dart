@@ -4,13 +4,15 @@ import 'package:flutter/material.dart';
 Widget customTextfield({
   String? lableTitle,
   String? hint,
-  bool? isPass, 
-  Icon? icon, 
+  controllers,
+  bool? isPass,
+  Icon? icon,
 }) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
     child: TextFormField(
-      obscureText: isPass ?? false, 
+      controller: controllers,
+      obscureText: isPass ?? false,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(18),
