@@ -1,4 +1,5 @@
 import 'package:chatterbox/constants/color_pallets.dart';
+import 'package:chatterbox/screens/register_screen.dart';
 import 'package:chatterbox/widgets/custom_textfeild.dart';
 import 'package:chatterbox/widgets/loginwith_tile.dart';
 import 'package:flutter/material.dart';
@@ -109,7 +110,14 @@ class LoginScreen extends StatelessWidget {
             ),
             InkWell(
               borderRadius: BorderRadius.circular(18),
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const RegisterScreen(),
+                    
+                  ),
+                );
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
