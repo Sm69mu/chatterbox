@@ -1,4 +1,5 @@
 import 'package:chatterbox/constants/color_pallets.dart';
+import 'package:chatterbox/screens/home_screen.dart';
 import 'package:chatterbox/screens/register_screen.dart';
 import 'package:chatterbox/widgets/custom_textfeild.dart';
 import 'package:chatterbox/widgets/loginwith_tile.dart';
@@ -75,6 +76,7 @@ class LoginScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(14),
               child: SlideAction(
+                animationDuration: const Duration(milliseconds: 600),
                 text: "Slide to Login",
                 textStyle: GoogleFonts.lato(
                     fontWeight: FontWeight.w600,
@@ -83,7 +85,10 @@ class LoginScreen extends StatelessWidget {
                 outerColor: const Color.fromARGB(255, 126, 120, 253),
                 elevation: 0,
                 borderRadius: 18.5,
-                onSubmit: () {},
+                onSubmit: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const HomeScreen()));
+                },
               ),
             ),
             const SizedBox(
@@ -114,7 +119,6 @@ class LoginScreen extends StatelessWidget {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => const RegisterScreen(),
-                    
                   ),
                 );
               },
