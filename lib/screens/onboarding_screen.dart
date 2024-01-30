@@ -1,6 +1,7 @@
 import 'package:chatterbox/constants/color_pallets.dart';
 import 'package:chatterbox/screens/login_screen.dart';
 import 'package:chatterbox/utils/page_bulider_method.dart';
+import 'package:chatterbox/utils/responsive.dart';
 import 'package:chatterbox/widgets/page_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -67,8 +68,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         ),
         Positioned(
             top: 60,
-            left: 300,
-            right: 20,
+            left: ScreenUtils.screenWidth(context) - 100,
+            // right: 20,
             child: isLastPage
                 ? const Text("")
                 : ElevatedButton(
@@ -101,6 +102,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         height: 60,
                         width: 150,
                         child: FloatingActionButton(
+                            elevation: 3,
                             onPressed: () {
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
@@ -123,6 +125,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             )),
                       )
                     : FloatingActionButton(
+                        elevation: 3,
                         onPressed: () {
                           controller.nextPage(
                               duration: const Duration(milliseconds: 400),

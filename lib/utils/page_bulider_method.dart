@@ -1,3 +1,4 @@
+import 'package:chatterbox/utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -31,8 +32,9 @@ class PageBuilder extends StatelessWidget {
           ),
           Text(
             title,
-            style:
-                GoogleFonts.lato(fontSize: 24, fontWeight: FontWeight.bold),
+            style: GoogleFonts.lato(
+                fontSize: ScaleSize.textScaleFactor(context) * 18,
+                fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
           const SizedBox(
@@ -40,7 +42,9 @@ class PageBuilder extends StatelessWidget {
           ),
           Text(
             subtitle,
-            style: GoogleFonts.lato(fontSize: 18, color: Colors.grey),
+            style: GoogleFonts.lato(
+                fontSize: ScaleSize.textScaleFactor(context) * 15,
+                color: Colors.grey),
             textAlign: TextAlign.center,
           ),
         ],
@@ -77,13 +81,16 @@ class UniquePageBuider extends StatelessWidget {
           ),
           Text(uniqueTitle,
               style: GoogleFonts.lato(
-                  fontSize: 24, fontWeight: FontWeight.bold)),
+                  fontSize: ScaleSize.textScaleFactor(context) * 18,
+                  fontWeight: FontWeight.bold)),
           const SizedBox(
             height: 10,
           ),
           Text(
             uniqueSubTitle,
-            style: GoogleFonts.lato(fontSize: 18, color: Colors.grey),
+            style: GoogleFonts.lato(
+                fontSize: ScaleSize.textScaleFactor(context) * 15,
+                color: Colors.grey),
             textAlign: TextAlign.center,
           ),
         ],

@@ -6,4 +6,5 @@ class ColorPallets {
   static const Color darkpurpleColor = Color.fromARGB(255, 101, 70, 120);
   static const Color purpleColor = Color(0xFF6B63FF);
   static const Color litePurpleColor = Color.fromARGB(130, 107, 99, 255);
+  static const Color litePurpleColor2 = Color(0xFF7371FC);
 }
