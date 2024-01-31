@@ -15,157 +15,167 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            Center(
-              child: SizedBox(
-                height: ScreenUtils.screenHeight(context) / 3,
-                child: LottieBuilder.asset(
-                  "assets/animations/Animation - 1706110538041.json",
-                  height: 300,
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 3,
-            ),
-            Text(
-              "Welcome to Chatter Box",
-              style: GoogleFonts.lato(
-                  fontSize: ScaleSize.textScaleFactor(context) * 25,
-                  fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            SizedBox(
-              height: ScreenUtils.screenHeight(context) / 9,
-              child: customTextfield(
-                  lableTitle: "Email",
-                  hint: "Enter Your Email",
-                  icon: const Icon(
-                    Icons.email,
-                    color: ColorPallets.purpleColor,
-                  )),
-            ),
-            SizedBox(
-              height: ScreenUtils.screenHeight(context) / 9,
-              child: customTextfield(
-                  isPass: true,
-                  lableTitle: 'Password',
-                  hint: "Enter Your Password",
-                  icon: const Icon(
-                    Icons.password_outlined,
-                    color: ColorPallets.purpleColor,
-                  )),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+      body: SafeArea(
+        child: Container(
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage(
+                    "assets/images/background_image.jpg",
+                  ),
+                  fit: BoxFit.cover)),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
               children: [
-                InkWell(
-                  borderRadius: BorderRadius.circular(18),
-                  onTap: () {},
+                Center(
                   child: SizedBox(
-                    height: 30,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 18),
-                      child: Text(
-                        'Forget password',
-                        style: GoogleFonts.lato(
-                            fontSize: 16, fontWeight: FontWeight.w600),
-                      ),
+                    height: ScreenUtils.screenHeight(context) / 3,
+                    child: LottieBuilder.asset(
+                      "assets/animations/new_login_animation.json",
+                      height: 300,
                     ),
                   ),
-                )
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(14),
-              child: SizedBox(
-                height: ScreenUtils.screenHeight(context) / 12,
-                child: SlideAction(
-                  sliderButtonIconPadding: 15,
-                  animationDuration: const Duration(milliseconds: 600),
-                  text: "Slide to Login",
-                  textStyle: GoogleFonts.lato(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 22,
-                      color: Colors.white),
-                  outerColor: const Color.fromARGB(255, 126, 120, 253),
-                  elevation: 0,
-                  borderRadius: 18.5,
-                  onSubmit: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const HomeScreen()));
-                  },
-                ),
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: ScreenUtils.screenWidth(context) / 5.5,
-                  height: ScreenUtils.screenHeight(context) / 11,
-                  child: loginWithtile(
-                      image: Image.asset(
-                    'assets/images/google.256x256.png',
-                  )),
                 ),
                 const SizedBox(
-                  width: 30,
+                  height: 3,
+                ),
+                Text(
+                  "Welcome to Chatter Box",
+                  style: GoogleFonts.lato(
+                      fontSize: ScaleSize.textScaleFactor(context) * 25,
+                      fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  height: 10,
                 ),
                 SizedBox(
-                  width: ScreenUtils.screenWidth(context) / 5.5,
-                  height: ScreenUtils.screenHeight(context) / 11,
-                  child: loginWithtile(
-                      image: Image.asset(
-                          'assets/images/facebook-color.256x256.png')),
+                  height: ScreenUtils.screenHeight(context) / 9,
+                  child: customTextfield(
+                      lableTitle: "Email",
+                      hint: "Enter Your Email",
+                      icon: const Icon(
+                        Icons.email,
+                        color: ColorPallets.purpleColor,
+                      )),
+                ),
+                SizedBox(
+                  height: ScreenUtils.screenHeight(context) / 9,
+                  child: customTextfield(
+                      isPass: true,
+                      lableTitle: 'Password',
+                      hint: "Enter Your Password",
+                      icon: const Icon(
+                        Icons.password_outlined,
+                        color: ColorPallets.purpleColor,
+                      )),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    InkWell(
+                      borderRadius: BorderRadius.circular(18),
+                      onTap: () {},
+                      child: SizedBox(
+                        height: 30,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 18),
+                          child: Text(
+                            'Forget password',
+                            style: GoogleFonts.lato(
+                                fontSize: 16, fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(14),
+                  child: SizedBox(
+                    height: ScreenUtils.screenHeight(context) / 12,
+                    child: SlideAction(
+                      sliderButtonIconPadding: 15,
+                      animationDuration: const Duration(milliseconds: 600),
+                      text: "Slide to Login",
+                      textStyle: GoogleFonts.lato(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 22,
+                          color: Colors.white),
+                      outerColor: Color.fromARGB(255, 89, 82, 211),
+                      elevation: 0,
+                      borderRadius: 18.5,
+                      onSubmit: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const HomeScreen()));
+                      },
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: ScreenUtils.screenWidth(context) / 6,
+                      height: ScreenUtils.screenHeight(context) / 12.5,
+                      child: loginWithtile(
+                          image: Image.asset(
+                        'assets/images/google.256x256.png',
+                      )),
+                    ),
+                    const SizedBox(
+                      width: 30,
+                    ),
+                    SizedBox(
+                      width: ScreenUtils.screenWidth(context) / 6,
+                      height: ScreenUtils.screenHeight(context) / 12.5,
+                      child: loginWithtile(
+                          image: Image.asset(
+                              'assets/images/facebook-color.256x256.png')),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                InkWell(
+                  borderRadius: BorderRadius.circular(18),
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const RegisterScreen(),
+                      ),
+                    );
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'New to Chatter Box ? ',
+                        style: GoogleFonts.lato(
+                            fontSize: ScaleSize.textScaleFactor(context) * 17,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      Text(
+                        'Register',
+                        style: GoogleFonts.lato(
+                            fontSize: ScaleSize.textScaleFactor(context) * 17,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 40,
                 )
               ],
             ),
-            const SizedBox(
-              height: 25,
-            ),
-            InkWell(
-              borderRadius: BorderRadius.circular(18),
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const RegisterScreen(),
-                  ),
-                );
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'New to Chatter Box ? ',
-                    style: GoogleFonts.lato(
-                        fontSize: ScaleSize.textScaleFactor(context) * 17,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  Text(
-                    'Register',
-                    style: GoogleFonts.lato(
-                        fontSize: ScaleSize.textScaleFactor(context) * 17,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 20,
-            )
-          ],
+          ),
         ),
       ),
     );
