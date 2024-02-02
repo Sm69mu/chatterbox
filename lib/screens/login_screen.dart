@@ -95,8 +95,10 @@ class LoginScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(14),
                   child: SizedBox(
-                    height: ScreenUtils.screenHeight(context) / 12,
+                    height: ScreenUtils.screenHeight(context) / 11,
                     child: SlideAction(
+                      sliderButtonIconSize:
+                          ScreenUtils.screenHeight(context) / 30,
                       sliderButtonIconPadding: 15,
                       animationDuration: const Duration(milliseconds: 600),
                       text: "Slide to Login",

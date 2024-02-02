@@ -9,11 +9,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/images/background_image.jpg"),
-                fit: BoxFit.cover)),
+      body: Column(
+        children: [
+          Container(
+            decoration: const BoxDecoration(color: Colors.amberAccent),
+            height: ScreenUtils.screenHeight(context) / 5,
+            width: ScreenUtils.screenHeight(context) / 3,
+          )
+        ],
       ),
     );
   }
