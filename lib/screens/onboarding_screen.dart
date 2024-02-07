@@ -42,22 +42,20 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             controller: controller,
             children: const [
               PageBuilder(
-                  animationPath:
-                      'assets/animations/Animation - 1705954434973.json',
+                  animationPath: 'assets/animations/robot_animation.json',
                   title: "Welcome To ChatterBox",
                   subtitle:
                       'Here You can Access all the advanced LLm tools in one place'),
               UniquePageBuider(
                   uniqueAnimationPath:
-                      'assets/animations/Animation - 1705954646101.json',
+                      'assets/animations/gemini_animation.json',
                   uniqueTitle: 'All AI Tools in one place',
                   uniqueSubTitle:
                       "Use the power of different ai tool and utilize it to increase your productivity",
                   uniqueAnimationPath2:
-                      'assets/animations/Animation - 1706029882302.json'),
+                      'assets/animations/chat_gpt_animation.json'),
               PageBuilder(
-                  animationPath:
-                      'assets/animations/Animation - 1705954195197.json',
+                  animationPath: 'assets/animations/ai_person_animation.json',
                   title: "Utilize the Power of Ai",
                   subtitle:
                       "Utilize the power of ai in Your day to day actiity and enhance your productivity")
