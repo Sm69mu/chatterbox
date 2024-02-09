@@ -1,5 +1,6 @@
 import 'package:chatterbox/utils/responsive.dart';
 import 'package:chatterbox/widgets/quick_actions.dart';
+import 'package:chatterbox/widgets/specific_action_tile.dart';
 import 'package:chatterbox/widgets/swiper_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,12 +29,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
                 child: CircleAvatar(
                   radius: 26,
-                  child: Image.asset("assets/images/google.256x256.png"),
+                  foregroundImage:
+                      AssetImage("assets/images/profile-image.jpg"),
                 ),
               )
             ],
@@ -59,31 +60,46 @@ class HomeScreen extends StatelessWidget {
           ),
           Row(
             children: [
-              const Align(
+               Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                    child: QuickActionTile(),
+                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                    child: InkWell(
+                      onTap: (){},
+                      child: const QuickActionTile()),
                   )),
               Column(
                 children: [
-                  SmallActionTile(
-                    text: "Text Generate",
-                    image: Image.asset("assets/icons/Text ai.png"),
-                    color: Color.fromARGB(255, 2, 64, 95),
+                  InkWell(
+                    onTap: (){},
+                    child: SmallActionTile(
+                      text: "Text Generate",
+                      image: Image.asset("assets/icons/Text ai.png"),
+                      color: const Color.fromARGB(255, 2, 64, 95),
+                    ),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  SmallActionTile(
-                    text: "Image Generator",
-                    image: Image.asset("assets/icons/image-AI2.png"),
-                    color: Color.fromARGB(255, 33, 85, 92),
+                  InkWell(
+                    onTap: (){},
+                    child: SmallActionTile(
+                      text: "Image Generator",
+                      image: Image.asset(
+                        "assets/icons/image_ai.png",
+                        fit: BoxFit.contain,
+                      ),
+                      color: const Color.fromARGB(255, 33, 85, 92),
+                    ),
                   )
                 ],
               )
             ],
           ),
+          const SizedBox(
+            height: 10,
+          ),
+          const Specificactiontile(),
         ],
       )),
     );

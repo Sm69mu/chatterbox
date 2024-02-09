@@ -1,4 +1,3 @@
-import 'package:chatterbox/constants/color_pallets.dart';
 import 'package:chatterbox/screens/login_screen.dart';
 import 'package:chatterbox/utils/page_bulider_method.dart';
 import 'package:chatterbox/utils/responsive.dart';
@@ -77,7 +76,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ? const Text("")
                   : ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: ColorPallets.litepurpleColor1,
+                          backgroundColor: Colors.transparent,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(17))),
                       onPressed: () {
@@ -86,8 +85,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       child: Text(
                         "Skip",
                         style: GoogleFonts.lato(
-                            fontWeight: FontWeight.w700,
-                            color: ColorPallets.darkpurpleColor),
+                          fontWeight: FontWeight.w700,
+                        ),
                       ))),
           Positioned(
               bottom: 30,

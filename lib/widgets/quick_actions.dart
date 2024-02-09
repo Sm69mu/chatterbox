@@ -7,36 +7,33 @@ class QuickActionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
-      child: Container(
-        height: 200,
-        width: 180,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
-            color: const Color.fromARGB(255, 9, 108, 170)),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-              child: Image.asset(
-                "assets/icons/sound_wave.png",
-                fit: BoxFit.contain,
-              ),
+    return Container(
+      height: 200,
+      width: 180,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: const Color.fromARGB(255, 9, 108, 170)),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+            child: Image.asset(
+              "assets/icons/sound_wave.png",
+              fit: BoxFit.contain,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 14),
-              child: Text(
-                "Use Voice Commands",
-                style: GoogleFonts.lato(
-                    height: 1,
-                    fontSize: ScaleSize.textScaleFactor(context) * 27,
-                    fontWeight: FontWeight.w700),
-              ),
-            )
-          ],
-        ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 14),
+            child: Text(
+              "Use Voice Commands",
+              style: GoogleFonts.lato(
+                  height: 1,
+                  fontSize: ScaleSize.textScaleFactor(context) * 25,
+                  fontWeight: FontWeight.w700),
+            ),
+          )
+        ],
       ),
     );
   }
