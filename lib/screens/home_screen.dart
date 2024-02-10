@@ -1,3 +1,4 @@
+import 'package:chatterbox/constants/images.dart';
 import 'package:chatterbox/utils/responsive.dart';
 import 'package:chatterbox/widgets/quick_actions.dart';
 import 'package:chatterbox/widgets/specific_action_tile.dart';
@@ -60,18 +61,18 @@ class HomeScreen extends StatelessWidget {
           ),
           Row(
             children: [
-               Align(
+              Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                    child: InkWell(
-                      onTap: (){},
-                      child: const QuickActionTile()),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 15),
+                    child:
+                        InkWell(onTap: () {}, child: const QuickActionTile()),
                   )),
               Column(
                 children: [
                   InkWell(
-                    onTap: (){},
+                    onTap: () {},
                     child: SmallActionTile(
                       text: "Text Generate",
                       image: Image.asset("assets/icons/Text ai.png"),
@@ -82,7 +83,7 @@ class HomeScreen extends StatelessWidget {
                     height: 10,
                   ),
                   InkWell(
-                    onTap: (){},
+                    onTap: () {},
                     child: SmallActionTile(
                       text: "Image Generator",
                       image: Image.asset(
@@ -99,7 +100,21 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          const Specificactiontile(),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: List.generate(
+                  specifictileicons.length,
+                  (index) => Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Specificactiontile(
+                            backgroundimg: tilebackgrndimgs[index],
+                            icon: Image.asset(specifictileicons[index]),
+                            title: tiletitle[index]),
+                      )),
+            ),
+          ),
         ],
       )),
     );

@@ -3,7 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Specificactiontile extends StatelessWidget {
-  const Specificactiontile({Key? key});
+  final dynamic backgroundimg;
+  final Image icon;
+  final String title;
+
+  const Specificactiontile({
+    Key? key,
+    required this.backgroundimg,
+    required this.icon,
+    required this.title,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,20 +20,44 @@ class Specificactiontile extends StatelessWidget {
       height: ScreenUtils.screenHeight(context) / 5,
       width: ScreenUtils.screenWidth(context) / 2.5,
       decoration: BoxDecoration(
-        color: Colors.grey[700],
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(20),
+        image: DecorationImage(
+          image: AssetImage(backgroundimg),
+          fit: BoxFit.cover,
+        ),
+        color: Colors.grey[900],
       ),
-      child: Column(
+      child: Stack(
         children: [
-          Image.asset(
-            "assets/images/background_image.jpg",
-            fit: BoxFit.contain,
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Container(
+              alignment: Alignment.centerLeft,
+              width: double.infinity,
+              height: ScreenUtils.screenHeight(context) / 12,
+              decoration: BoxDecoration(
+                color: Colors.grey[800],
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Text(
+                  title,
+                  style: GoogleFonts.lato(
+                    fontWeight: FontWeight.w600,
+                    fontSize: ScaleSize.textScaleFactor(context) * 19,
+                  ),
+                ),
+              ),
+            ),
           ),
-          Text(
-            "Code generator",
-            style: GoogleFonts.lato(
-              fontWeight: FontWeight.w500,
-              fontSize: ScaleSize.textScaleFactor(context) * 20,
+          Positioned(
+            top: 60,
+            right: 15,
+            child: SizedBox(
+              height: 60,
+              width: 60,
+              child: icon,
             ),
           ),
         ],
