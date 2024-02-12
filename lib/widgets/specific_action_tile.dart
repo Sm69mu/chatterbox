@@ -52,11 +52,11 @@ class Specificactiontile extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 60,
-            right: 15,
+            top: 50,
+            right: 10,
             child: SizedBox(
-              height: 60,
-              width: 60,
+              height: 70,
+              width: 70,
               child: icon,
             ),
           ),

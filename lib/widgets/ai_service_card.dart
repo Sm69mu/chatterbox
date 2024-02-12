@@ -17,34 +17,85 @@ class _AIServiceCardState extends State<AIServiceCard> {
       width: ScreenUtils.screenWidth(context) - 30,
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
-          color: Colors.grey[800], borderRadius: BorderRadius.circular(30)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
+          gradient: const LinearGradient(
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [
+                Color.fromARGB(255, 68, 77, 84),
+                Color.fromARGB(255, 39, 49, 39)
+              ]),
+          borderRadius: BorderRadius.circular(20)),
+      child: Column(children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "Bard",
+              style: GoogleFonts.lato(
+                  fontWeight: FontWeight.bold,
+                  fontSize: ScaleSize.textScaleFactor(context) * 25),
+            ),
+            SizedBox(
+              height: ScreenUtils.screenHeight(context) / 20,
+              width: ScreenUtils.screenWidth(context) / 7,
+              child: Image.asset(
+                "assets/images/google-bard-icon.png",
+                fit: BoxFit.contain,
+              ),
+            )
+          ],
+        ),
+        const Spacer(),
+        SizedBox(
+          height: ScreenUtils.screenHeight(context) / 20,
+          width: ScreenUtils.screenWidth(context) / 1.5,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SizedBox(
-                height: ScreenUtils.screenHeight(context) / 15,
-                width: ScreenUtils.screenWidth(context) / 9,
-                child: Image.asset(
-                  "assets/images/google-bard-icon.png",
-                  fit: BoxFit.contain,
+              Image.asset(
+                "assets/icons/chat 1.png",
+                fit: BoxFit.contain,
+              ),
+              Image.asset(
+                "assets/icons/edit 1.png",
+                fit: BoxFit.contain,
+              ),
+              Image.asset(
+                "assets/icons/scan (1) 1.png",
+                fit: BoxFit.contain,
+              ),
+            ],
+          ),
+        ),
+        const Spacer(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: SizedBox(
+                height: ScreenUtils.screenHeight(context) / 20,
+                width: ScreenUtils.screenWidth(context) / 1.5,
+                child: TextFormField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(15))),
                 ),
               ),
-              const SizedBox(
-                width: 10,
+            ),
+            SizedBox(
+              height: ScreenUtils.screenHeight(context) / 22,
+              width: ScreenUtils.screenWidth(context) / 15,
+              child: Image.asset(
+                "assets/icons/correct.png",
+                fit: BoxFit.contain,
               ),
-              Text(
-                "Bard",
-                style: GoogleFonts.lato(
-                    fontSize: ScaleSize.textScaleFactor(context) * 25,
-                    fontWeight: FontWeight.w500),
-              )
-            ],
-          )
-        ],
-      ),
+            )
+          ],
+        ),
+      ]),
     );
   }
 }
