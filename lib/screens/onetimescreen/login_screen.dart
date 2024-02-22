@@ -1,6 +1,6 @@
 import 'package:chatterbox/constants/color_pallets.dart';
-import 'package:chatterbox/screens/home_screen.dart';
-import 'package:chatterbox/screens/register_screen.dart';
+import 'package:chatterbox/screens/main_screen.dart';
+import 'package:chatterbox/screens/onetimescreen/register_screen.dart';
 import 'package:chatterbox/utils/responsive.dart';
 import 'package:chatterbox/widgets/custom_textfeild.dart';
 import 'package:chatterbox/widgets/loginwith_tile.dart';
@@ -97,12 +97,12 @@ class LoginScreen extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       fontSize: 22,
                       color: Colors.white),
-                  outerColor: Color.fromARGB(255, 89, 82, 211),
+                  outerColor: const Color.fromARGB(255, 89, 82, 211),
                   elevation: 0,
                   borderRadius: 18.5,
                   onSubmit: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const HomeScreen()));
+                        builder: (context) => const MainScreen()));
                   },
                 ),
               ),

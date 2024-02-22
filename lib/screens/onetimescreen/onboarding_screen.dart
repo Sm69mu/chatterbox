@@ -1,4 +1,4 @@
-import 'package:chatterbox/screens/login_screen.dart';
+import 'package:chatterbox/screens/onetimescreen/login_screen.dart';
 import 'package:chatterbox/utils/page_bulider_method.dart';
 import 'package:chatterbox/utils/responsive.dart';
 import 'package:chatterbox/widgets/page_indicator.dart';

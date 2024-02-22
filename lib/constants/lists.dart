@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 final List<String> specifictileicons = [
   "assets/icons/code_icon.png",
   "assets/icons/content_icon.png",
@@ -17,4 +19,20 @@ final List<String> tiletitle = [
   "Content Generator",
   "Image Generator",
   "Jokes Generator",
+];
+
+List<IconData> listOfIcons = [
+  Icons.home_outlined,
+  Icons.chat_bubble_outline_sharp,
+  Icons.bookmark_border_outlined,
+  Icons.person_2_outlined,
+];
+
+
+
+List<String> listOfStrings = [
+  'Home',
+  'Chats',
+  'Saved',
+  'Account',
 ];

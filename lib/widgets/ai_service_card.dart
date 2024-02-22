@@ -35,19 +35,17 @@ class _AIServiceCardState extends State<AIServiceCard> {
                   fontWeight: FontWeight.bold,
                   fontSize: ScaleSize.textScaleFactor(context) * 25),
             ),
-            SizedBox(
+            Image.asset(
               height: ScreenUtils.screenHeight(context) / 20,
               width: ScreenUtils.screenWidth(context) / 7,
-              child: Image.asset(
-                "assets/images/google-bard-icon.png",
-                fit: BoxFit.contain,
-              ),
-            )
+              "assets/images/google-bard-icon.png",
+              fit: BoxFit.contain,
+            ),
           ],
         ),
         const Spacer(),
         SizedBox(
-          height: ScreenUtils.screenHeight(context) / 20,
+          height: ScreenUtils.screenHeight(context) / 25,
           width: ScreenUtils.screenWidth(context) / 1.5,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -68,6 +66,14 @@ class _AIServiceCardState extends State<AIServiceCard> {
           ),
         ),
         const Spacer(),
+        SizedBox(
+          height: ScreenUtils.screenHeight(context) / 30,
+          width: double.infinity,
+          child: Text(
+            " Api key -",
+            style: GoogleFonts.lato(fontWeight: FontWeight.normal),
+          ),
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -80,19 +86,17 @@ class _AIServiceCardState extends State<AIServiceCard> {
                   obscureText: true,
                   decoration: InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
+                          borderSide: const BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.circular(15))),
                 ),
               ),
             ),
-            SizedBox(
-              height: ScreenUtils.screenHeight(context) / 22,
+            Image.asset(
               width: ScreenUtils.screenWidth(context) / 15,
-              child: Image.asset(
-                "assets/icons/correct.png",
-                fit: BoxFit.contain,
-              ),
-            )
+              height: ScreenUtils.screenHeight(context) / 22,
+              "assets/icons/correct.png",
+              fit: BoxFit.contain,
+            ),
           ],
         ),
       ]),

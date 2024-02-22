@@ -1,4 +1,4 @@
-import 'package:chatterbox/screens/onboarding_screen.dart';
+import 'package:chatterbox/screens/onetimescreen/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,13 +14,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
 
 
-      //TODO make a proper themeing property
 
       theme: ThemeData.dark(
         useMaterial3: true,
       ),
 
-      //TODO make one time ob screen & proper routes
 
       home: const OnboardingScreen(),
     );

@@ -1,4 +1,4 @@
-import 'package:chatterbox/constants/images.dart';
+import 'package:chatterbox/constants/lists.dart';
 import 'package:chatterbox/utils/responsive.dart';
 import 'package:chatterbox/widgets/ai_service_card.dart';
 import 'package:chatterbox/widgets/quick_actions.dart';
@@ -147,8 +147,27 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const AIServiceCard(),
-            SizedBox(
+            const SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: AIServiceCard(),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: AIServiceCard(),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: AIServiceCard(),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
               height: 20,
             )
           ],
