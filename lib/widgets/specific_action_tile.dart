@@ -17,7 +17,7 @@ class Specificactiontile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenUtils.screenHeight(context) / 5,
+      height: ScreenUtils.screenHeight(context) *0.23,
       width: ScreenUtils.screenWidth(context) / 2.5,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -34,7 +34,7 @@ class Specificactiontile extends StatelessWidget {
             child: Container(
               alignment: Alignment.centerLeft,
               width: double.infinity,
-              height: ScreenUtils.screenHeight(context) / 12,
+              height: ScreenUtils.screenHeight(context) *0.1,
               decoration: BoxDecoration(
                 color: Colors.grey[800],
                 borderRadius: BorderRadius.circular(15),
@@ -55,8 +55,8 @@ class Specificactiontile extends StatelessWidget {
             top: 50,
             right: 10,
             child: SizedBox(
-              height: 70,
-              width: 70,
+              height: ScreenUtils.screenHeight(context)*0.08,
+              width: ScreenUtils.screenHeight(context)*0.08,
               child: icon,
             ),
           ),

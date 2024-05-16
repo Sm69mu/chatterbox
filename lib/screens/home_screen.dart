@@ -25,8 +25,8 @@ class HomeScreen extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
                   child: SizedBox(
-                    height: 34,
-                    width: 34,
+                    height: ScreenUtils.screenHeight(context)*0.05,
+                    width: ScreenUtils.screenHeight(context) * 0.04,
                     child: Image.asset(
                       "assets/icons/menu_icon.png",
                       fit: BoxFit.contain,
@@ -34,9 +34,9 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
                   child: CircleAvatar(
-                    radius: 26,
+                    radius: 25,
                     foregroundImage:
                         AssetImage("assets/images/profile-image.jpg"),
                   ),
@@ -79,7 +79,7 @@ class HomeScreen extends StatelessWidget {
                       child: SmallActionTile(
                         text: "Text Generate",
                         image: Image.asset("assets/icons/Text ai.png"),
-                        color: const Color.fromARGB(255, 2, 64, 95),
+                        color: const Color.fromARGB(255, 103, 51, 102),
                       ),
                     ),
                     const SizedBox(
@@ -139,7 +139,7 @@ class HomeScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    "Choose Your prefered AI service",
+                    "Choose Your prefered LLM",
                     style: GoogleFonts.lato(
                         fontWeight: FontWeight.bold,
                         fontSize: ScaleSize.textScaleFactor(context) * 25),
@@ -153,15 +153,15 @@ class HomeScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(9.0),
                     child: AIServiceCard(),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(9.0),
                     child: AIServiceCard(),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(9.0),
                     child: AIServiceCard(),
                   )
                 ],

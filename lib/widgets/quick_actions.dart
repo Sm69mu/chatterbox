@@ -8,7 +8,7 @@ class QuickActionTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: ScreenUtils.screenHeight(context)*0.23,
       width: 180,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
@@ -17,7 +17,7 @@ class QuickActionTile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
             child: Image.asset(
               "assets/icons/sound_wave.png",
               fit: BoxFit.contain,
@@ -29,7 +29,7 @@ class QuickActionTile extends StatelessWidget {
               "Use Voice Commands",
               style: GoogleFonts.lato(
                   height: 1,
-                  fontSize: ScaleSize.textScaleFactor(context) * 25,
+                  fontSize: ScaleSize.textScaleFactor(context) * 20,
                   fontWeight: FontWeight.w700),
             ),
           )
@@ -51,15 +51,15 @@ class SmallActionTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: ScreenUtils.screenHeight(context) / 10,
-      width: ScreenUtils.screenWidth(context) / 2.1,
+      width: ScreenUtils.screenWidth(context) / 2.3,
       decoration:
-          BoxDecoration(borderRadius: BorderRadius.circular(25), color: color),
+          BoxDecoration(borderRadius: BorderRadius.circular(20), color: color),
       child: Row(
         textDirection: TextDirection.ltr,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(18),
             child: image,
           ),
           Flexible(
@@ -70,7 +70,7 @@ class SmallActionTile extends StatelessWidget {
                 style: GoogleFonts.lato(
                     height: 1.2,
                     fontWeight: FontWeight.w600,
-                    fontSize: ScaleSize.textScaleFactor(context) * 20),
+                    fontSize: ScaleSize.textScaleFactor(context) *17),
               ),
             ),
           )
