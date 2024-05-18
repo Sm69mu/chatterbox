@@ -27,7 +27,7 @@ class QuickActionTile extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 14),
             child: Text(
               "Use Voice Commands",
-              style: GoogleFonts.lato(
+              style: GoogleFonts.urbanist(
                   height: 1,
                   fontSize: ScaleSize.textScaleFactor(context) * 20,
                   fontWeight: FontWeight.w700),
@@ -67,9 +67,9 @@ class SmallActionTile extends StatelessWidget {
               padding: const EdgeInsets.only(right: 5),
               child: Text(
                 text,
-                style: GoogleFonts.lato(
+                style: GoogleFonts.urbanist(
                     height: 1.2,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w700,
                     fontSize: ScaleSize.textScaleFactor(context) *17),
               ),
             ),

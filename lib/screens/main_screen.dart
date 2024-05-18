@@ -6,6 +6,7 @@ import 'package:chatterbox/screens/saved_screen.dart';
 import 'package:chatterbox/utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -103,7 +104,7 @@ class _MainScreenState extends State<MainScreen> {
                             curve: Curves.fastLinearToSlowEaseIn,
                             child: Text(
                               index == currentIndex ? listOfStrings[index] : '',
-                              style: const TextStyle(
+                              style:  GoogleFonts.urbanist(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 15,

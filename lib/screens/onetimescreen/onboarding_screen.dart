@@ -84,7 +84,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       },
                       child: Text(
                         "Skip",
-                        style: GoogleFonts.lato(
+                        style: GoogleFonts.urbanist(
                           fontWeight: FontWeight.w700,
                         ),
                       ))),

@@ -19,38 +19,47 @@ class HomeScreen extends StatelessWidget {
             child: Column(
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-                  child: SizedBox(
-                    height: ScreenUtils.screenHeight(context)*0.05,
-                    width: ScreenUtils.screenHeight(context) * 0.04,
-                    child: Image.asset(
-                      "assets/icons/menu_icon.png",
-                      fit: BoxFit.contain,
+                InkWell(
+                  onTap: () {},
+                  borderRadius: BorderRadius.circular(30),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.grey, width: 2),
+                        borderRadius: BorderRadius.circular(40)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(6.0),
+                      child: Row(
+                        children: [
+                          const CircleAvatar(
+                            radius: 25,
+                            foregroundImage:
+                                AssetImage("assets/images/profile-image.jpg"),
+                          ),
+                          SizedBox(
+                            width: ScreenUtils.screenWidth(context) * 0.03,
+                          ),
+                          Text('Soumyajit Mukherjee',
+                              style: GoogleFonts.urbanist(
+                                  fontSize:
+                                      ScaleSize.textScaleFactor(context) * 20,
+                                  fontWeight: FontWeight.w600))
+                        ],
+                      ),
                     ),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-                  child: CircleAvatar(
-                    radius: 25,
-                    foregroundImage:
-                        AssetImage("assets/images/profile-image.jpg"),
                   ),
                 )
               ],
             ),
             const SizedBox(
-              height: 15,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'Hey, Soumyajit Ask me something 👋',
-                style: GoogleFonts.lato(
+                'He,Ask me something 👋',
+                style: GoogleFonts.urbanist(
                     fontSize: ScaleSize.textScaleFactor(context) * 30,
                     fontWeight: FontWeight.bold),
               ),
@@ -110,7 +119,7 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
                   " Action Shortcuts ",
-                  style: GoogleFonts.lato(
+                  style: GoogleFonts.urbanist(
                       fontWeight: FontWeight.bold,
                       fontSize: ScaleSize.textScaleFactor(context) * 26),
                 ),
@@ -140,7 +149,7 @@ class HomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
                     "Choose Your prefered LLM",
-                    style: GoogleFonts.lato(
+                    style: GoogleFonts.urbanist(
                         fontWeight: FontWeight.bold,
                         fontSize: ScaleSize.textScaleFactor(context) * 25),
                   ),

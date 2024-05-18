@@ -32,7 +32,7 @@ class PageBuilder extends StatelessWidget {
           ),
           Text(
             title,
-            style: GoogleFonts.lato(
+            style: GoogleFonts.urbanist(
                 fontSize: ScaleSize.textScaleFactor(context) * 18,
                 fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
@@ -42,7 +42,7 @@ class PageBuilder extends StatelessWidget {
           ),
           Text(
             subtitle,
-            style: GoogleFonts.lato(
+            style: GoogleFonts.urbanist(
                 fontSize: ScaleSize.textScaleFactor(context) * 15,
                 color: Colors.grey),
             textAlign: TextAlign.center,
@@ -80,7 +80,7 @@ class UniquePageBuider extends StatelessWidget {
             height: 20,
           ),
           Text(uniqueTitle,
-              style: GoogleFonts.lato(
+              style: GoogleFonts.urbanist(
                   fontSize: ScaleSize.textScaleFactor(context) * 18,
                   fontWeight: FontWeight.bold)),
           const SizedBox(
@@ -88,7 +88,7 @@ class UniquePageBuider extends StatelessWidget {
           ),
           Text(
             uniqueSubTitle,
-            style: GoogleFonts.lato(
+            style: GoogleFonts.urbanist(
                 fontSize: ScaleSize.textScaleFactor(context) * 15,
                 color: Colors.grey),
             textAlign: TextAlign.center,

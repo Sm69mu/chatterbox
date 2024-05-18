@@ -30,7 +30,7 @@ class RegisterScreen extends StatelessWidget {
             ),
             Text(
               "Register to Chatter Box",
-              style: GoogleFonts.lato(
+              style: GoogleFonts.urbanist(
                   fontSize: ScaleSize.textScaleFactor(context) * 25,
                   fontWeight: FontWeight.bold),
             ),
@@ -78,7 +78,7 @@ class RegisterScreen extends StatelessWidget {
                 height: ScreenUtils.screenHeight(context) / 11.5,
                 child: SlideAction(
                   text: "Slide to Register",
-                  textStyle: GoogleFonts.lato(
+                  textStyle: GoogleFonts.urbanist(
                       fontWeight: FontWeight.w600,
                       fontSize: 22,
                       color: Colors.white),
@@ -105,13 +105,13 @@ class RegisterScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Already have an account ? ',
-                    style: GoogleFonts.lato(
+                    style: GoogleFonts.urbanist(
                         fontSize: ScaleSize.textScaleFactor(context) * 17,
                         fontWeight: FontWeight.w500),
                   ),
                   Text(
                     'Login',
-                    style: GoogleFonts.lato(
+                    style: GoogleFonts.urbanist(
                         fontSize: ScaleSize.textScaleFactor(context) * 17,
                         fontWeight: FontWeight.w600),
                   ),

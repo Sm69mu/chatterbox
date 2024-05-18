@@ -43,7 +43,7 @@ class Specificactiontile extends StatelessWidget {
                 padding: const EdgeInsets.all(12),
                 child: Text(
                   title,
-                  style: GoogleFonts.lato(
+                  style: GoogleFonts.urbanist(
                     fontWeight: FontWeight.w600,
                     fontSize: ScaleSize.textScaleFactor(context) * 19,
                   ),

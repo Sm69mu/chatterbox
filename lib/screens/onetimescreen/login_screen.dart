@@ -33,8 +33,8 @@ class LoginScreen extends StatelessWidget {
             ),
             Text(
               "Welcome to Chatter Box",
-              style: GoogleFonts.lato(
-                  fontSize: ScaleSize.textScaleFactor(context) * 25,
+              style: GoogleFonts.urbanist(
+                  fontSize: ScaleSize.textScaleFactor(context) * 26,
                   fontWeight: FontWeight.bold),
             ),
             const SizedBox(
@@ -76,7 +76,7 @@ class LoginScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 18),
                       child: Text(
                         'Forget password',
-                        style: GoogleFonts.lato(
+                        style: GoogleFonts.urbanist(
                             fontSize: 16, fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -93,7 +93,7 @@ class LoginScreen extends StatelessWidget {
                   sliderButtonIconPadding: 15,
                   animationDuration: const Duration(milliseconds: 600),
                   text: "Slide to Login",
-                  textStyle: GoogleFonts.lato(
+                  textStyle: GoogleFonts.urbanist(
                       fontWeight: FontWeight.w600,
                       fontSize: 22,
                       color: Colors.white),
@@ -150,13 +150,13 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   Text(
                     'New to Chatter Box ? ',
-                    style: GoogleFonts.lato(
+                    style: GoogleFonts.urbanist(
                         fontSize: ScaleSize.textScaleFactor(context) * 17,
                         fontWeight: FontWeight.w500),
                   ),
                   Text(
                     'Register',
-                    style: GoogleFonts.lato(
+                    style: GoogleFonts.urbanist(
                         fontSize: ScaleSize.textScaleFactor(context) * 17,
                         fontWeight: FontWeight.w600),
                   ),
