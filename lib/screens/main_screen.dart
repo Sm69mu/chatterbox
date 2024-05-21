@@ -1,8 +1,7 @@
 import 'package:chatterbox/constants/lists.dart';
-import 'package:chatterbox/screens/account_screen.dart';
-import 'package:chatterbox/screens/chats_screen.dart';
-import 'package:chatterbox/screens/home_screen.dart';
-import 'package:chatterbox/screens/saved_screen.dart';
+import 'package:chatterbox/screens/app_screen/chats_list_screen.dart';
+import 'package:chatterbox/screens/app_screen/home_screen.dart';
+import 'package:chatterbox/screens/app_screen/account_screenn.dart';
 import 'package:chatterbox/utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,8 +19,7 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> listofpage = const [
     HomeScreen(),
     ChatsScreen(),
-    SavedScreen(),
-    AccountScreen()
+    AccountScreen(),
   ];
 
   @override
@@ -29,7 +27,9 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: listofpage[currentIndex],
       bottomNavigationBar: Container(
-        margin: EdgeInsets.all(ScreenUtils.screenWidth(context) * .05),
+        margin: EdgeInsets.symmetric(
+            horizontal: ScreenUtils.screenWidth(context) / 8,
+            vertical: ScreenUtils.screenWidth(context) * 0.03),
         height: ScreenUtils.screenWidth(context) * .155,
         decoration: BoxDecoration(
           color: Colors.grey[800],
@@ -46,7 +46,7 @@ class _MainScreenState extends State<MainScreen> {
           itemCount: listOfIcons.length,
           scrollDirection: Axis.horizontal,
           padding: EdgeInsets.symmetric(
-              horizontal: ScreenUtils.screenWidth(context) * .02),
+              horizontal: ScreenUtils.screenWidth(context) * .03),
           itemBuilder: (context, index) => InkWell(
             onTap: () {
               setState(() {
@@ -63,7 +63,7 @@ class _MainScreenState extends State<MainScreen> {
                   curve: Curves.fastLinearToSlowEaseIn,
                   width: index == currentIndex
                       ? ScreenUtils.screenWidth(context) * .32
-                      : ScreenUtils.screenWidth(context) * .15,
+                      : ScreenUtils.screenWidth(context) * .13,
                   alignment: Alignment.center,
                   child: AnimatedContainer(
                     duration: const Duration(seconds: 1),
@@ -84,7 +84,7 @@ class _MainScreenState extends State<MainScreen> {
                   duration: const Duration(seconds: 1),
                   curve: Curves.fastLinearToSlowEaseIn,
                   width: index == currentIndex
-                      ? ScreenUtils.screenWidth(context) * .31
+                      ? ScreenUtils.screenWidth(context) * .32
                       : ScreenUtils.screenWidth(context) * .18,
                   alignment: Alignment.center,
                   child: Stack(
@@ -95,7 +95,7 @@ class _MainScreenState extends State<MainScreen> {
                             duration: const Duration(seconds: 1),
                             curve: Curves.fastLinearToSlowEaseIn,
                             width: index == currentIndex
-                                ? ScreenUtils.screenWidth(context) * .13
+                                ? ScreenUtils.screenWidth(context) * .12
                                 : 0,
                           ),
                           AnimatedOpacity(
@@ -104,7 +104,7 @@ class _MainScreenState extends State<MainScreen> {
                             curve: Curves.fastLinearToSlowEaseIn,
                             child: Text(
                               index == currentIndex ? listOfStrings[index] : '',
-                              style:  GoogleFonts.urbanist(
+                              style: GoogleFonts.urbanist(
                                 color: Colors.black,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 15,

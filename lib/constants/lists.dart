@@ -23,7 +23,6 @@ final List<String> tiletitle = [
 
 List<IconData> listOfIcons = [
   Icons.home_outlined,
-  Icons.chat_bubble_outline_sharp,
   Icons.bookmark_border_outlined,
   Icons.person_2_outlined,
 ];
@@ -32,7 +31,6 @@ List<IconData> listOfIcons = [
 
 List<String> listOfStrings = [
   'Home',
-  'Chats',
   'Saved',
   'Account',
 ];

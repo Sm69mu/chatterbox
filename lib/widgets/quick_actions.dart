@@ -7,33 +7,38 @@ class QuickActionTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: ScreenUtils.screenHeight(context)*0.23,
-      width: 180,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30),
-          color: const Color.fromARGB(255, 9, 108, 170)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
-            child: Image.asset(
-              "assets/icons/sound_wave.png",
-              fit: BoxFit.contain,
+    return InkWell(
+      //TODO:set material swatch color
+      onTap: () {},
+      borderRadius: BorderRadius.circular(20),
+      child: Container(
+        height: ScreenUtils.screenHeight(context) * 0.23,
+        width: 180,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            color: const Color.fromARGB(255, 9, 108, 170)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+              child: Image.asset(
+                "assets/icons/sound_wave.png",
+                fit: BoxFit.contain,
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 14),
-            child: Text(
-              "Use Voice Commands",
-              style: GoogleFonts.urbanist(
-                  height: 1,
-                  fontSize: ScaleSize.textScaleFactor(context) * 20,
-                  fontWeight: FontWeight.w700),
-            ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 14),
+              child: Text(
+                "Use Voice Commands",
+                style: GoogleFonts.urbanist(
+                    height: 1,
+                    fontSize: ScaleSize.textScaleFactor(context) * 20,
+                    fontWeight: FontWeight.w700),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -42,39 +47,48 @@ class QuickActionTile extends StatelessWidget {
 class SmallActionTile extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
   final color;
+  final ontap;
   final Image image;
   final String text;
   const SmallActionTile(
-      {super.key, this.color, required this.image, required this.text});
+      {super.key,
+      this.color,
+      required this.image,
+      required this.text,
+      this.ontap});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: ScreenUtils.screenHeight(context) / 10,
-      width: ScreenUtils.screenWidth(context) / 2.3,
-      decoration:
-          BoxDecoration(borderRadius: BorderRadius.circular(20), color: color),
-      child: Row(
-        textDirection: TextDirection.ltr,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(18),
-            child: image,
-          ),
-          Flexible(
-            child: Padding(
-              padding: const EdgeInsets.only(right: 5),
-              child: Text(
-                text,
-                style: GoogleFonts.urbanist(
-                    height: 1.2,
-                    fontWeight: FontWeight.w700,
-                    fontSize: ScaleSize.textScaleFactor(context) *17),
-              ),
+    return InkWell(
+      borderRadius: BorderRadius.circular(10),
+      onTap: ontap,
+      child: Container(
+        height: ScreenUtils.screenHeight(context) / 10,
+        width: ScreenUtils.screenWidth(context) / 2.3,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20), color: color),
+        child: Row(
+          textDirection: TextDirection.ltr,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(18),
+              child: image,
             ),
-          )
-        ],
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.only(right: 5),
+                child: Text(
+                  text,
+                  style: GoogleFonts.urbanist(
+                      height: 1.2,
+                      fontWeight: FontWeight.w700,
+                      fontSize: ScaleSize.textScaleFactor(context) * 17),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
