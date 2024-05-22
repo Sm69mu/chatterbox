@@ -13,7 +13,7 @@ class DefaulGeminiChatScreen extends StatelessWidget {
           IconButton(
               tooltip: "Save Chat",
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.bookmark,
               ))
         ],

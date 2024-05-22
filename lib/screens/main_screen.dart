@@ -75,7 +75,9 @@ class _MainScreenState extends State<MainScreen> {
                         ? ScreenUtils.screenWidth(context) * .32
                         : 0,
                     decoration: BoxDecoration(
-                      color: index == currentIndex ? Colors.white : Colors.grey,
+                      color: index == currentIndex
+                          ? const Color.fromARGB(255, 226, 226, 226)
+                          : Colors.grey,
                       borderRadius: BorderRadius.circular(50),
                     ),
                   ),

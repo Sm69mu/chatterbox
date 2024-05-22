@@ -18,7 +18,7 @@ class CustomChatWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: ScreenUtils.screenHeight(context) * 0.22,
+      height: ScreenUtils.screenHeight(context) / 4,
       width: ScreenUtils.screenWidth(context) / 1.2,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -34,7 +34,7 @@ class CustomChatWidget extends StatelessWidget {
                 width: ScreenUtils.screenWidth(context) / 1.9,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color.fromARGB(0, 53, 104, 85)),
+                    color: const Color.fromARGB(0, 53, 104, 85)),
                 child: Column(
                   children: [
                     Align(
@@ -42,7 +42,7 @@ class CustomChatWidget extends StatelessWidget {
                       child: Text(
                         title,
                         style: GoogleFonts.urbanist(
-                            fontSize: ScaleSize.textScaleFactor(context) * 23,
+                            fontSize: ScaleSize.textScaleFactor(context) * 22,
                             fontWeight: FontWeight.w800),
                       ),
                     ),
@@ -52,7 +52,7 @@ class CustomChatWidget extends StatelessWidget {
                     Text(
                       Subtitle,
                       style: GoogleFonts.urbanist(
-                          fontSize: ScaleSize.textScaleFactor(context) * 18,
+                          fontSize: ScaleSize.textScaleFactor(context) * 17,
                           fontWeight: FontWeight.w600),
                     )
                   ],
@@ -76,7 +76,7 @@ class CustomChatWidget extends StatelessWidget {
                 width: ScreenUtils.screenHeight(context) / 6,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
-                    color: Color.fromARGB(255, 232, 240, 244)),
+                    color: const Color.fromARGB(255, 232, 240, 244)),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

@@ -75,14 +75,17 @@ class RegisterScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(14),
               child: SizedBox(
-                height: ScreenUtils.screenHeight(context) / 11.5,
+                height: ScreenUtils.screenHeight(context) / 12,
                 child: SlideAction(
-                  text: "Slide to Register",
+                  sliderButtonIconSize: ScreenUtils.screenHeight(context) / 37,
+                  sliderButtonIconPadding: 15,
+                  animationDuration: const Duration(milliseconds: 600),
+                  text: "Slide to Login",
                   textStyle: GoogleFonts.urbanist(
                       fontWeight: FontWeight.w600,
                       fontSize: 22,
                       color: Colors.white),
-                  outerColor: const Color.fromARGB(255, 126, 120, 253),
+                  outerColor: const Color.fromARGB(255, 89, 82, 211),
                   elevation: 0,
                   borderRadius: 18.5,
                   onSubmit: () {},
@@ -118,8 +121,8 @@ class RegisterScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 40,
+            SizedBox(
+              height: ScreenUtils.screenHeight(context) / 10,
             )
           ],
         ),

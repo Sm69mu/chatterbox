@@ -8,14 +8,13 @@ class QuickActionTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      //TODO:set material swatch color
       onTap: () {},
       borderRadius: BorderRadius.circular(20),
       child: Container(
         height: ScreenUtils.screenHeight(context) * 0.23,
-        width: 180,
+        width: ScreenUtils.screenWidth(context) / 2.2,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(20),
             color: const Color.fromARGB(255, 9, 108, 170)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -33,7 +32,7 @@ class QuickActionTile extends StatelessWidget {
                 "Use Voice Commands",
                 style: GoogleFonts.urbanist(
                     height: 1,
-                    fontSize: ScaleSize.textScaleFactor(context) * 20,
+                    fontSize: ScaleSize.textScaleFactor(context) * 19,
                     fontWeight: FontWeight.w700),
               ),
             )
@@ -64,26 +63,26 @@ class SmallActionTile extends StatelessWidget {
       onTap: ontap,
       child: Container(
         height: ScreenUtils.screenHeight(context) / 10,
-        width: ScreenUtils.screenWidth(context) / 2.3,
+        width: ScreenUtils.screenWidth(context) / 2.2,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20), color: color),
+            borderRadius: BorderRadius.circular(16), color: color),
         child: Row(
           textDirection: TextDirection.ltr,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(18),
+              padding: EdgeInsets.all(ScreenUtils.screenHeight(context) / 45),
               child: image,
             ),
             Flexible(
               child: Padding(
-                padding: const EdgeInsets.only(right: 5),
+                padding: const EdgeInsets.only(right: 3),
                 child: Text(
                   text,
                   style: GoogleFonts.urbanist(
                       height: 1.2,
                       fontWeight: FontWeight.w700,
-                      fontSize: ScaleSize.textScaleFactor(context) * 17),
+                      fontSize: ScaleSize.textScaleFactor(context) * 16),
                 ),
               ),
             )

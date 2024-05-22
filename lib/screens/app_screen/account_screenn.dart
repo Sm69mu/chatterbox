@@ -26,14 +26,14 @@ class _AccountScreenState extends State<AccountScreen> {
           Center(
             child: Container(
               height: ScreenUtils.screenHeight(context) / 8,
-              width: ScreenUtils.screenWidth(context) - 10,
+              width: ScreenUtils.screenWidth(context) - 30,
               decoration: BoxDecoration(
                   color: const Color.fromARGB(121, 33, 149, 243),
                   borderRadius: BorderRadius.circular(30)),
               child: Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(4.0),
+                    padding: const EdgeInsets.only(left: 10),
                     child: CircleAvatar(
                       radius: ScreenUtils.screenWidth(context) / 10,
                       backgroundImage:
@@ -44,19 +44,20 @@ class _AccountScreenState extends State<AccountScreen> {
                     width: ScreenUtils.screenWidth(context) / 40,
                   ),
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         "Soumyajit Mukherjee",
                         style: GoogleFonts.urbanist(
                             fontWeight: FontWeight.bold,
-                            fontSize: ScaleSize.textScaleFactor(context) * 20),
+                            fontSize: ScaleSize.textScaleFactor(context) * 17),
                       ),
                       Text(
                         "soumyajitmukherjee271@gmail.com",
                         style: GoogleFonts.urbanist(
                             fontWeight: FontWeight.w600,
-                            fontSize: ScaleSize.textScaleFactor(context) * 17),
+                            fontSize: ScaleSize.textScaleFactor(context) * 12),
                       )
                     ],
                   )
@@ -70,7 +71,7 @@ class _AccountScreenState extends State<AccountScreen> {
           Container(
             width: ScreenUtils.screenWidth(context) - 20,
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.white, width: 2),
+              border: Border.all(color: Colors.white, width: 1),
               borderRadius: BorderRadius.circular(25),
               color: const Color.fromARGB(80, 33, 149, 243),
             ),
@@ -84,7 +85,7 @@ class _AccountScreenState extends State<AccountScreen> {
                     "Feedback",
                     style: GoogleFonts.urbanist(
                         fontWeight: FontWeight.w600,
-                        fontSize: ScaleSize.textScaleFactor(context) * 22),
+                        fontSize: ScaleSize.textScaleFactor(context) * 20),
                   ),
                 ),
                 const Divider(
@@ -100,7 +101,7 @@ class _AccountScreenState extends State<AccountScreen> {
                     "Report issue",
                     style: GoogleFonts.urbanist(
                         fontWeight: FontWeight.w600,
-                        fontSize: ScaleSize.textScaleFactor(context) * 22),
+                        fontSize: ScaleSize.textScaleFactor(context) * 20),
                   ),
                 ),
                 const Divider(
@@ -116,7 +117,7 @@ class _AccountScreenState extends State<AccountScreen> {
                     "Credits",
                     style: GoogleFonts.urbanist(
                         fontWeight: FontWeight.w600,
-                        fontSize: ScaleSize.textScaleFactor(context) * 22),
+                        fontSize: ScaleSize.textScaleFactor(context) * 20),
                   ),
                 )
               ],
@@ -129,7 +130,8 @@ class _AccountScreenState extends State<AccountScreen> {
             height: ScreenUtils.screenHeight(context) / 12,
             width: ScreenUtils.screenHeight(context) / 5,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20), color: Colors.white),
+                borderRadius: BorderRadius.circular(20),
+                color: const Color.fromARGB(255, 229, 229, 229)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -138,9 +140,9 @@ class _AccountScreenState extends State<AccountScreen> {
                   style: GoogleFonts.urbanist(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
-                      fontSize: ScaleSize.textScaleFactor(context) * 20),
+                      fontSize: ScaleSize.textScaleFactor(context) * 18),
                 ),
-                Icon(
+                const Icon(
                   Icons.logout_outlined,
                   color: Colors.black,
                 )

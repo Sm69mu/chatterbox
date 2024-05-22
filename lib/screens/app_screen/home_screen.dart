@@ -1,4 +1,3 @@
-import 'package:chatterbox/constants/lists.dart';
 import 'package:chatterbox/screens/chat_screens/defaul_gemini_chat_screen.dart';
 import 'package:chatterbox/utils/responsive.dart';
 import 'package:chatterbox/widgets/custom_textfeild.dart';
@@ -34,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           const CircleAvatar(
-                            radius: 25,
+                            radius: 22,
                             foregroundImage:
                                 AssetImage("assets/images/profile-image.jpg"),
                           ),
@@ -44,7 +43,7 @@ class HomeScreen extends StatelessWidget {
                           Text(username,
                               style: GoogleFonts.urbanist(
                                   fontSize:
-                                      ScaleSize.textScaleFactor(context) * 20,
+                                      ScaleSize.textScaleFactor(context) * 18,
                                   fontWeight: FontWeight.w600))
                         ],
                       ),
@@ -97,7 +96,7 @@ class HomeScreen extends StatelessWidget {
                     alignment: Alignment.centerLeft,
                     child: Padding(
                       padding:
-                          EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                          EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                       child: QuickActionTile(),
                     )),
                 Column(
@@ -131,14 +130,15 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: ScreenUtils.screenHeight(context) * 0.08,
               width: ScreenUtils.screenWidth(context),
-              child: Center(
+              child: Align(
+                alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: Text(
                     " Choose Your custom model ",
                     style: GoogleFonts.urbanist(
                         fontWeight: FontWeight.bold,
-                        fontSize: ScaleSize.textScaleFactor(context) * 26),
+                        fontSize: ScaleSize.textScaleFactor(context) * 23),
                   ),
                 ),
               ),
@@ -153,13 +153,12 @@ class HomeScreen extends StatelessWidget {
                   ),
                   CustomChatWidget(
                     bgcolor: const [
-                       Color.fromARGB(255, 10, 149, 137),
-                       Color.fromARGB(255, 99, 145, 135)
+                      Color.fromARGB(255, 10, 149, 137),
+                      Color.fromARGB(255, 111, 167, 154)
                     ],
                     icon: Image.asset("assets/icons/robot.png"),
                     title: "Cyclops",
-                    Subtitle:
-                        " The AI that helps you write better code, faster.",
+                    Subtitle: " The AI that helps you write better code.",
                   ),
                   const SizedBox(
                     width: 10,
@@ -178,8 +177,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                   CustomChatWidget(
                       bgcolor: const [
-                        Color.fromARGB(255, 174, 93, 236),
-                        Color.fromARGB(180, 230, 69, 255)
+                        Color.fromARGB(180, 230, 69, 255),
+                        Color.fromARGB(255, 182, 113, 234),
                       ],
                       icon: Image.asset("assets/icons/watch.png"),
                       title: "Laugh-a-tron",

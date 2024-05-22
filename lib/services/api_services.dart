@@ -1,6 +1,8 @@
 import 'package:chatterbox/constants/api_keys.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
-//make api the poper api call
+
+
+
 class CyclopsCodeGenerator {
     final String apikey = geminApiKey;
     Future<String> generateCode(String input) async {
