@@ -1,7 +1,7 @@
-import 'package:chatterbox/screens/onetimescreen/login_screen.dart';
-import 'package:chatterbox/utils/page_bulider_method.dart';
-import 'package:chatterbox/utils/responsive.dart';
-import 'package:chatterbox/widgets/page_indicator.dart';
+import 'login_screen.dart';
+import '../../utils/page_bulider_method.dart';
+import '../../utils/responsive.dart';
+import '../../widgets/page_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

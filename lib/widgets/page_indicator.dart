@@ -1,4 +1,4 @@
-import 'package:chatterbox/constants/color_pallets.dart';
+import '../constants/color_pallets.dart';
 import 'package:flutter/material.dart';
 
 class PageIndicator extends StatelessWidget {

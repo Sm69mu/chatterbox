@@ -1,6 +1,6 @@
-import 'package:chatterbox/constants/color_pallets.dart';
-import 'package:chatterbox/utils/responsive.dart';
-import 'package:chatterbox/widgets/custom_textfeild.dart';
+import '../../constants/color_pallets.dart';
+import '../../utils/responsive.dart';
+import '../../widgets/custom_textfeild.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';

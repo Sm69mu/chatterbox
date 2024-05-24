@@ -1,4 +1,4 @@
-import 'package:chatterbox/utils/responsive.dart';
+import '../../utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

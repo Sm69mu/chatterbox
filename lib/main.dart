@@ -1,8 +1,20 @@
-import 'package:chatterbox/screens/onetimescreen/onboarding_screen.dart';
+import 'providers/chat_providers.dart';
+import 'screens/onetimescreen/onboarding_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await ChatProviders.initHive();
+
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context) => ChatProviders()),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

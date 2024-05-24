@@ -1,9 +1,9 @@
-import 'package:chatterbox/constants/color_pallets.dart';
-import 'package:chatterbox/screens/main_screen.dart';
-import 'package:chatterbox/screens/onetimescreen/register_screen.dart';
-import 'package:chatterbox/utils/responsive.dart';
-import 'package:chatterbox/widgets/custom_textfeild.dart';
-import 'package:chatterbox/widgets/loginwith_tile.dart';
+import '../../constants/color_pallets.dart';
+import '../main_screen.dart';
+import 'register_screen.dart';
+import '../../utils/responsive.dart';
+import '../../widgets/custom_textfeild.dart';
+import '../../widgets/loginwith_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -117,6 +117,7 @@ class LoginScreen extends StatelessWidget {
                   width: ScreenUtils.screenWidth(context) / 6,
                   height: ScreenUtils.screenHeight(context) / 12.5,
                   child: loginWithtile(
+                    ontap: (){},
                       image: Image.asset(
                     'assets/images/google.256x256.png',
                   )),
@@ -128,6 +129,7 @@ class LoginScreen extends StatelessWidget {
                   width: ScreenUtils.screenWidth(context) / 6,
                   height: ScreenUtils.screenHeight(context) / 12.5,
                   child: loginWithtile(
+                      ontap: () {},
                       image: Image.asset(
                           'assets/images/facebook-color.256x256.png')),
                 )

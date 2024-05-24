@@ -1,8 +1,5 @@
-import 'package:chatterbox/constants/lists.dart';
-import 'package:chatterbox/screens/app_screen/chats_list_screen.dart';
-import 'package:chatterbox/screens/app_screen/home_screen.dart';
-import 'package:chatterbox/screens/app_screen/account_screenn.dart';
-import 'package:chatterbox/utils/responsive.dart';
+import '../constants/lists.dart';
+import '../utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,11 +13,7 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   var currentIndex = 0;
-  List<Widget> listofpage = const [
-    HomeScreen(),
-    ChatsScreen(),
-    AccountScreen(),
-  ];
+  
 
   @override
   Widget build(BuildContext context) {

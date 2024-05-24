@@ -1,8 +1,12 @@
-import 'package:chatterbox/screens/chat_screens/defaul_gemini_chat_screen.dart';
-import 'package:chatterbox/utils/responsive.dart';
-import 'package:chatterbox/widgets/custom_textfeild.dart';
-import 'package:chatterbox/widgets/quick_actions.dart';
-import 'package:chatterbox/widgets/Custom_chat_widget.dart';
+import '../chat_screens/roughai_chat_screen.dart';
+import '../chat_screens/laughatron_chat_scree.dart';
+import '../chat_screens/cutlery_chat_screen.dart';
+import '../chat_screens/cyclops_chat_screen.dart';
+import '../chat_screens/defaul_gemini_chat_screen.dart';
+import '../../utils/responsive.dart';
+import '../../widgets/quick_actions.dart';
+import '../../widgets/custom_chat_widget.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -151,38 +155,92 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     width: 10,
                   ),
-                  CustomChatWidget(
-                    bgcolor: const [
-                      Color.fromARGB(255, 10, 149, 137),
-                      Color.fromARGB(255, 111, 167, 154)
-                    ],
-                    icon: Image.asset("assets/icons/robot.png"),
-                    title: "Cyclops",
-                    Subtitle: " The AI that helps you write better code.",
+                  Hero(
+                    tag: "Cyclops",
+                    child: customChatModelwidget(
+                      ontap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const CyclopsChatScreen()));
+                      },
+                      bgcolor: const [
+                        Color.fromARGB(255, 10, 149, 137),
+                        Color.fromARGB(255, 111, 167, 154)
+                      ],
+                      icon: Image.asset("assets/icons/robot.png"),
+                      title: "Cyclops",
+                      subtitle: " The AI that helps you write better code.",
+                    ),
                   ),
                   const SizedBox(
                     width: 10,
                   ),
-                  CustomChatWidget(
-                      bgcolor: const [
-                        Color.fromARGB(255, 136, 119, 83),
-                        Color.fromARGB(136, 199, 228, 160)
-                      ],
-                      icon: Image.asset("assets/icons/chef.png"),
-                      title: "Flavor Finder",
-                      Subtitle:
-                          "I'm not just a chatbot, I'm your personal chef."),
+                  Hero(
+                    tag: "Cutlery",
+                    child: customChatModelwidget(
+                        ontap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const CutleryChatScreen()));
+                        },
+                        bgcolor: const [
+                          Color.fromARGB(255, 136, 119, 83),
+                          Color.fromARGB(136, 199, 228, 160)
+                        ],
+                        icon: Image.asset("assets/icons/chef.png"),
+                        title: " Cutlery",
+                        subtitle:
+                            "I'm not just a chatbot, I'm your personal chef."),
+                  ),
                   const SizedBox(
                     width: 10,
                   ),
-                  CustomChatWidget(
-                      bgcolor: const [
-                        Color.fromARGB(180, 230, 69, 255),
-                        Color.fromARGB(255, 182, 113, 234),
-                      ],
-                      icon: Image.asset("assets/icons/watch.png"),
-                      title: "Laugh-a-tron",
-                      Subtitle: "I'm the AI you can laugh at (and with).")
+                  Hero(
+                    tag: "Laugh-a-tron",
+                    child: customChatModelwidget(
+                        ontap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const LaughChatScreen()));
+                        },
+                        bgcolor: const [
+                          Color.fromARGB(180, 0, 115, 209),
+                          Color.fromARGB(255, 49, 130, 153),
+                        ],
+                        icon: Image.asset("assets/icons/watch.png"),
+                        title: "Laugh-a-tron",
+                        subtitle: "I'm the AI you can laugh at (and with)."),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Hero(
+                    tag: "Rough-AI",
+                    child: customChatModelwidget(
+                        ontap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const RoughAiChatScreen()));
+                        },
+                        bgcolor: const [
+                          Color.fromARGB(180, 184, 11, 25),
+                          Color.fromARGB(255, 134, 90, 122),
+                        ],
+                        icon: Image.asset("assets/icons/evil.png"),
+                        title: "Rough-AI",
+                        subtitle: "I'm the AI you can laugh at (and with)."),
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
                 ],
               ),
             ),

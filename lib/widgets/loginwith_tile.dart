@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-Widget loginWithtile({Image? image}) {
+Widget loginWithtile({Image? image,ontap}) {
   return InkWell(
     borderRadius: BorderRadius.circular(18),
-    onTap: () {},
+    onTap: ontap,
     child: Container(
       height: 70,
       width: 70,

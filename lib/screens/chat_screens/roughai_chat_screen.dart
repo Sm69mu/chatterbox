@@ -1,19 +1,19 @@
-import 'package:chatterbox/providers/chat_providers.dart';
-import 'package:provider/provider.dart';
-
-import '../../utils/responsive.dart';
-import '../../widgets/chat_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
-class DefaulGeminiChatScreen extends StatefulWidget {
-  const DefaulGeminiChatScreen({super.key});
+import '../../providers/chat_providers.dart';
+import '../../utils/responsive.dart';
+import '../../widgets/chat_text_field.dart';
+
+class RoughAiChatScreen extends StatefulWidget {
+  const RoughAiChatScreen({super.key});
 
   @override
-  State<DefaulGeminiChatScreen> createState() => _DefaulGeminiChatScreenState();
+  State<RoughAiChatScreen> createState() => _DefaulGeminiChatScreenState();
 }
 
-class _DefaulGeminiChatScreenState extends State<DefaulGeminiChatScreen> {
+class _DefaulGeminiChatScreenState extends State<RoughAiChatScreen> {
   TextEditingController messagecontroller = TextEditingController();
 
   @override
@@ -42,7 +42,7 @@ class _DefaulGeminiChatScreenState extends State<DefaulGeminiChatScreen> {
           ],
           centerTitle: true,
           title: Text(
-            "Chat With Gemini",
+            "Chat With Rpugh-AI",
             style: GoogleFonts.urbanist(
                 fontWeight: FontWeight.w700,
                 fontSize: ScaleSize.textScaleFactor(context) * 20),
@@ -72,7 +72,6 @@ class _DefaulGeminiChatScreenState extends State<DefaulGeminiChatScreen> {
               child: RoundedTextField(
                 ChatProviders: ChatProviders,
                 preffixicon: InkWell(
-                  
                   onTap: () {},
                   child: const Icon(Icons.add_circle_outline_outlined),
                 ),

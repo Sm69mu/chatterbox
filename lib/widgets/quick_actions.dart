@@ -1,4 +1,4 @@
-import 'package:chatterbox/utils/responsive.dart';
+import '../utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -46,10 +46,10 @@ class QuickActionTile extends StatelessWidget {
 class SmallActionTile extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
   final color;
-  final ontap;
+  var ontap;
   final Image image;
   final String text;
-  const SmallActionTile(
+   SmallActionTile(
       {super.key,
       this.color,
       required this.image,
