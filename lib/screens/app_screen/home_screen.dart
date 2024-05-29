@@ -1,14 +1,19 @@
-import '../chat_screens/roughai_chat_screen.dart';
-import '../chat_screens/laughatron_chat_scree.dart';
-import '../chat_screens/cutlery_chat_screen.dart';
-import '../chat_screens/cyclops_chat_screen.dart';
-import '../chat_screens/defaul_gemini_chat_screen.dart';
+import 'package:chatterbox/widgets/offline_ai_tile.dart';
+
+import '../../widgets/inference_widget_tile.dart';
+import '../chat_screens/gemini_chat_screens/roughai_chat_screen.dart';
+import '../chat_screens/gemini_chat_screens/laughatron_chat_scree.dart';
+import '../chat_screens/gemini_chat_screens/cutlery_chat_screen.dart';
+import '../chat_screens/gemini_chat_screens/cyclops_chat_screen.dart';
+import '../chat_screens/gemini_chat_screens/defaul_gemini_chat_screen.dart';
 import '../../utils/responsive.dart';
 import '../../widgets/quick_actions.dart';
 import '../../widgets/custom_chat_widget.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../chat_screens/offline_chat_screens/offline_chat.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -213,7 +218,7 @@ class HomeScreen extends StatelessWidget {
                           Color.fromARGB(180, 0, 115, 209),
                           Color.fromARGB(255, 49, 130, 153),
                         ],
-                        icon: Image.asset("assets/icons/watch.png"),
+                        icon: Image.asset("assets/icons/glasses.png"),
                         title: "Laugh-a-tron",
                         subtitle: "I'm the AI you can laugh at (and with)."),
                   ),
@@ -244,9 +249,35 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 20,
-            )
+            SizedBox(
+              height: ScreenUtils.screenHeight(context) / 10,
+              child: Center(
+                child: Text(
+                  "Use Your favourite offline LLM",
+                  style: GoogleFonts.urbanist(
+                      fontWeight: FontWeight.w700,
+                      fontSize: ScaleSize.textScaleFactor(context) * 20),
+                ),
+              ),
+            ),
+            OfflineAiTile(
+              ontap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => OfflineChat()));
+              },
+            ),
+            SizedBox(
+              height: ScreenUtils.screenHeight(context) / 10,
+              child: Center(
+                child: Text(
+                  "Use LLm from Hugging Face",
+                  style: GoogleFonts.urbanist(
+                      fontWeight: FontWeight.w700,
+                      fontSize: ScaleSize.textScaleFactor(context) * 20),
+                ),
+              ),
+            ),
+            InferenceWidgetTile()
           ],
         )),
       ),

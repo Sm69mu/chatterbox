@@ -12,7 +12,6 @@ class ChatsScreen extends StatefulWidget {
 class _ChatsScreenState extends State<ChatsScreen> {
   @override
   Widget build(BuildContext context) {
-    //TODO: use chat length here
     const List chatcount = [2, 4, 5, 6, 7, 8];
     return Scaffold(
       appBar: AppBar(
@@ -34,43 +33,69 @@ class _ChatsScreenState extends State<ChatsScreen> {
                 onTap: () {},
                 child: Container(
                   alignment: Alignment.center,
-                  height: ScreenUtils.screenHeight(context) * 0.1,
                   width: ScreenUtils.screenWidth(context) - 30,
                   decoration: BoxDecoration(
                       color: const Color.fromARGB(146, 88, 44, 164),
                       borderRadius: BorderRadius.circular(15)),
-                  child: ListTile(
-                    //TODO:implement wrapping text
-                    title: Text(
-                      "Sample text",
-                      style: GoogleFonts.urbanist(
-                        fontWeight: FontWeight.w700,
-                        fontSize: ScaleSize.textScaleFactor(context) * 19,
-                      ),
-                    ),
-                    trailing: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        InkWell(
-                            borderRadius: BorderRadius.circular(30),
-                            onTap: () {},
-                            child: const Padding(
-                              padding: EdgeInsets.all(10.0),
-                              child: Icon(Icons.bookmark_add),
-                            )),
-                        SizedBox(
-                          width: ScreenUtils.screenWidth(context) * 0.07,
+                  child: ExpansionTile(
+                      tilePadding: EdgeInsets.symmetric(
+                          horizontal: ScreenUtils.screenHeight(context) / 30,
+                          vertical: ScreenUtils.screenHeight(context) / 60),
+                      title: Text(
+                        "Sample text and chat response ",
+                        style: GoogleFonts.urbanist(
+                          fontWeight: FontWeight.w700,
+                          fontSize: ScaleSize.textScaleFactor(context) * 19,
                         ),
-                        InkWell(
-                            borderRadius: BorderRadius.circular(30),
-                            onTap: () {},
-                            child: const Padding(
-                              padding: EdgeInsets.all(10.0),
-                              child: Icon(Icons.arrow_forward_ios_rounded),
-                            )),
-                      ],
-                    ),
-                  ),
+                      ),
+                      subtitle: Text("Sample text and chat response  ",
+                          style: GoogleFonts.urbanist(
+                            fontWeight: FontWeight.w500,
+                            fontSize: ScaleSize.textScaleFactor(context) * 15,
+                          )),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      children: [
+                        SizedBox(
+                          height: ScreenUtils.screenHeight(context) / 10,
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(horizontal: 8),
+                                  child: ElevatedButton(
+                                      onPressed: () {},
+                                      child: const Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Text("Delete"),
+                                          Icon(Icons.delete_forever_outlined)
+                                        ],
+                                      )),
+                                ),
+                              ),
+                              Expanded(
+                                  child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8),
+                                child: ElevatedButton(
+                                    onPressed: () {},
+                                    child: const Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Text("View"),
+                                        Icon(Icons.arrow_forward)
+                                      ],
+                                    )),
+                              ))
+                            ],
+                          ),
+                        )
+                      ]),
                 ),
               ),
             );
