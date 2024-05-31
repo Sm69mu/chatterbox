@@ -3,30 +3,27 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 class InfarenceChatProvider extends ChangeNotifier {
-  
+  static Uint8List? imageBytes;
 
-  Future<Uint8List> query(Map<String, dynamic> data) async {
+  static Future<void> query(String prompt, BuildContext context) async {
+    final provider = Provider.of<InfarenceChatProvider>(context, listen: false);
     final response = await http.post(
       Uri.parse(
           "https://api-inference.huggingface.co/models/TheMistoAI/MistoLine"),
       headers: {
         "Authorization": "Bearer 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",
       },
-      body: jsonEncode(data),
+      body: jsonEncode({"inputs": prompt}),
     );
     if (response.statusCode == 200) {
-      final bytes = response.bodyBytes;
-      return bytes;
+      imageBytes = response.bodyBytes;
+      provider.notifyListeners();
     } else {
       throw Exception('Failed to load image: ${response.statusCode}');
     }
-  }
-
-  Future<void> main() async {
-    final result = await query({"inputs": "Astronaut riding a horse"});
-    print(result);
   }
 }
 

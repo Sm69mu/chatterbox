@@ -33,7 +33,7 @@ class QuickActionTile extends StatelessWidget {
                 style: GoogleFonts.urbanist(
                     height: 1,
                     fontSize: ScaleSize.textScaleFactor(context) * 19,
-                    fontWeight: FontWeight.w700),
+                    fontWeight: FontWeight.w600),
               ),
             )
           ],
@@ -46,10 +46,10 @@ class QuickActionTile extends StatelessWidget {
 class SmallActionTile extends StatelessWidget {
   // ignore: prefer_typing_uninitialized_variables
   final color;
-  var ontap;
+  final dynamic ontap;
   final Image image;
   final String text;
-   SmallActionTile(
+  const SmallActionTile(
       {super.key,
       this.color,
       required this.image,
@@ -81,7 +81,7 @@ class SmallActionTile extends StatelessWidget {
                   text,
                   style: GoogleFonts.urbanist(
                       height: 1.2,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w600,
                       fontSize: ScaleSize.textScaleFactor(context) * 16),
                 ),
               ),

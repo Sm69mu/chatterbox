@@ -87,6 +87,7 @@ class _DefaulGeminiChatScreenState extends State<DefaulGeminiChatScreen> {
             children: [
               Expanded(
                   child: ChatTextField(
+                    barcolor: Color.fromARGB(255, 18, 194, 179),
                       pickedImage: pickedImage,
                       ontap_mic: () {},
                       ontap_img: () async {

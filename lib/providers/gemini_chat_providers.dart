@@ -4,14 +4,12 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
-import 'package:hive_flutter/adapters.dart';
+import 'package:hive/hive.dart';
 import 'package:image_picker/image_picker.dart';
-
-import 'package:path_provider/path_provider.dart' as path;
 import 'package:provider/provider.dart';
 
+import '../db/chat_db.dart';
 import '../gemini/gemini_api_key.dart';
-import '../constants/hive_constants.dart';
 import '../widgets/message_widget.dart';
 
 class ChatProviders extends ChangeNotifier {
@@ -21,6 +19,7 @@ class ChatProviders extends ChangeNotifier {
   static late final ChatSession chatSession;
   static late final GenerativeModel? model;
   static bool isLoading = false;
+  static  Box<ChatMessage>? chatBox;
   static TextEditingController controller = TextEditingController();
 
   static GenerativeModel initModel(
@@ -119,6 +118,31 @@ class ChatProviders extends ChangeNotifier {
     }
   }
 
+  //   void _initChatBox() async {
+  //   await Hive.initFlutter();
+  //   _chatBox = await Hive.openBox<ChatMessage>('chat_box');
+  // }
 
-
+  static Future<void> saveChat(BuildContext context) async {
+    final provider = Provider.of<ChatProviders>(context, listen: false);
+    chatBox = Hive.box<ChatMessage>('chatMessages');
+    try {
+      ChatProviders.chatBox = await Hive.openBox<ChatMessage>("chatMessages");
+      for (var message in messages) {
+        final chatMessage = ChatMessage(
+          isUser: message.isUser,
+          message: message.message,
+          image:
+              message.image != null ? await message.image!.readAsBytes() : null,
+          date: message.date,
+        );
+        await ChatProviders.chatBox!.add(chatMessage); // Use chatBox to add
+      }
+      log('Chat successfully saved to Hive!');
+    } catch (e) {
+      log('Error saving chat to Hive: $e');
+    } finally {
+      provider.notifyListeners();
+    }
+  }
 }

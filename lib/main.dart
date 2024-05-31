@@ -1,24 +1,20 @@
-import 'package:chatterbox/providers/offline_chat_provider.dart';
-import 'package:chatterbox/screens/app_screen/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'providers/gemini_chat_providers.dart';
+import 'db/chat_db.dart';
 import 'screens/onetimescreen/onboarding_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  // try {
-  //   await ChatProviders.initHive();
-  // } catch (e) {
-  //   log('Error initializing Hive: $e' as num);
-  // }
-
+  final appDocumentDir = await getApplicationDocumentsDirectory();
+  Hive.init(appDocumentDir.path); 
+  Hive.registerAdapter(ChatMessageAdapter());
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => ChatProviders()),
-      ChangeNotifierProvider(create: (context) => OfflineChatProvider()),
     ],
     child: const MyApp(),
   ));
@@ -34,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const OnboardingScreen(),
     );
   }
 }

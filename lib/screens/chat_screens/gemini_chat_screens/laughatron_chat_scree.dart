@@ -7,6 +7,7 @@ import '../../../gemini/gemini_system_insturction.dart';
 import '../../../providers/gemini_chat_providers.dart';
 import '../../../utils/responsive.dart';
 import '../../../widgets/chat_text_field.dart';
+import '../../../widgets/def_chat_page.dart';
 import '../../../widgets/message_widget.dart';
 
 class LaughChatScreen extends StatefulWidget {
@@ -60,19 +61,29 @@ class _DefaulGeminiChatScreenState extends State<LaughChatScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
-              child: ListView.builder(
-                reverse: false,
-                itemCount: ChatProviders.messages.length,
-                itemBuilder: (context, index) {
-                  final message = ChatProviders.messages[index];
-                  return Messages(
-                    isUser: message.isUser,
-                    message: message.message,
-                    image: message.image,
-                    date: message.date.toString(),
-                  );
-                },
-              ),
+              child: ChatProviders.messages.isEmpty
+                  ? const Center(
+                      child: DefChatPage(
+                        bgcolor: Color.fromARGB(64, 23, 145, 216),
+                        title: "Laugh-a-tron",
+                        logoimg: "assets/icons/glasses.png",
+                        descrp:
+                            "Laugh-a-Tron is the ultimate joke generator LLM, ready to tickle your funny bone with endless humor! 🤣🎉 With quick-witted one-liners, hilarious puns, and customizable jokes, Laugh-a-Tron ensures your always the life of the party.✨",
+                      ),
+                    )
+                  : ListView.builder(
+                      reverse: false,
+                      itemCount: ChatProviders.messages.length,
+                      itemBuilder: (context, index) {
+                        final message = ChatProviders.messages[index];
+                        return Messages(
+                          isUser: message.isUser,
+                          message: message.message,
+                          image: message.image,
+                          date: message.date.toString(),
+                        );
+                      },
+                    ),
             ),
             SizedBox(
               height: ScreenUtils.screenHeight(context) / 10,
@@ -82,11 +93,12 @@ class _DefaulGeminiChatScreenState extends State<LaughChatScreen> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20), color: Colors.grey[700]),
+              borderRadius: BorderRadius.circular(20), color: Colors.grey[900]),
           child: Row(
             children: [
               Expanded(
                   child: ChatTextField(
+                      barcolor: Color.fromARGB(255, 18, 194, 179),
                       pickedImage: pickedImage,
                       ontap_mic: () {},
                       ontap_img: () async {
@@ -97,7 +109,7 @@ class _DefaulGeminiChatScreenState extends State<LaughChatScreen> {
                 padding: const EdgeInsets.all(4.0),
                 child: FloatingActionButton(
                   tooltip: "Send",
-                  backgroundColor: const Color.fromARGB(255, 232, 232, 232),
+                  backgroundColor: Color.fromARGB(255, 134, 193, 253),
                   onPressed: () {
                     // Handle message sending
                     if (pickedImage != null) {

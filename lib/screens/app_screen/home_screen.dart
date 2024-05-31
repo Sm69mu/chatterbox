@@ -1,5 +1,3 @@
-import 'package:chatterbox/widgets/offline_ai_tile.dart';
-
 import '../../widgets/inference_widget_tile.dart';
 import '../chat_screens/gemini_chat_screens/roughai_chat_screen.dart';
 import '../chat_screens/gemini_chat_screens/laughatron_chat_scree.dart';
@@ -12,8 +10,6 @@ import '../../widgets/custom_chat_widget.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-import '../chat_screens/offline_chat_screens/offline_chat.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -74,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                           text: 'Hey, ',
                           style: GoogleFonts.urbanist(
                             fontSize: ScaleSize.textScaleFactor(context) * 25,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                         TextSpan(
@@ -90,7 +86,7 @@ class HomeScreen extends StatelessWidget {
                           text: ' Ask me something 👋',
                           style: GoogleFonts.urbanist(
                             fontSize: ScaleSize.textScaleFactor(context) * 25,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ],
@@ -146,8 +142,8 @@ class HomeScreen extends StatelessWidget {
                   child: Text(
                     " Choose Your custom model ",
                     style: GoogleFonts.urbanist(
-                        fontWeight: FontWeight.bold,
-                        fontSize: ScaleSize.textScaleFactor(context) * 23),
+                        fontWeight: FontWeight.w600,
+                        fontSize: ScaleSize.textScaleFactor(context) * 21),
                   ),
                 ),
               ),
@@ -251,29 +247,16 @@ class HomeScreen extends StatelessWidget {
             ),
             SizedBox(
               height: ScreenUtils.screenHeight(context) / 10,
-              child: Center(
-                child: Text(
-                  "Use Your favourite offline LLM",
-                  style: GoogleFonts.urbanist(
-                      fontWeight: FontWeight.w700,
-                      fontSize: ScaleSize.textScaleFactor(context) * 20),
-                ),
-              ),
-            ),
-            OfflineAiTile(
-              ontap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => OfflineChat()));
-              },
-            ),
-            SizedBox(
-              height: ScreenUtils.screenHeight(context) / 10,
-              child: Center(
-                child: Text(
-                  "Use LLm from Hugging Face",
-                  style: GoogleFonts.urbanist(
-                      fontWeight: FontWeight.w700,
-                      fontSize: ScaleSize.textScaleFactor(context) * 20),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                  child: Text(
+                    "Use LLm from Hugging Face",
+                    style: GoogleFonts.urbanist(
+                        fontWeight: FontWeight.w600,
+                        fontSize: ScaleSize.textScaleFactor(context) * 20),
+                  ),
                 ),
               ),
             ),

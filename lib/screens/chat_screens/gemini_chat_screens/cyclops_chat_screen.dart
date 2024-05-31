@@ -1,3 +1,4 @@
+import 'package:chatterbox/widgets/def_chat_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
@@ -43,9 +44,7 @@ class _CyclopsChatScreenState extends State<CyclopsChatScreen> {
             IconButton(
                 tooltip: "Save Chat",
                 onPressed: () {
-                  final chatProvider =
-                      Provider.of<ChatProviders>(context, listen: false);
-                  chatProvider.clearChat();
+                  ChatProviders.saveChat(context);
                 },
                 icon: const Icon(
                   Icons.bookmark,
@@ -63,19 +62,29 @@ class _CyclopsChatScreenState extends State<CyclopsChatScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
-              child: ListView.builder(
-                reverse: false,
-                itemCount: ChatProviders.messages.length,
-                itemBuilder: (context, index) {
-                  final message = ChatProviders.messages[index];
-                  return Messages(
-                    isUser: message.isUser,
-                    message: message.message,
-                    image: message.image,
-                    date: message.date.toString(),
-                  );
-                },
-              ),
+              child: ChatProviders.messages.isEmpty
+                  ? const Center(
+                      child: DefChatPage(
+                        bgcolor: Color.fromARGB(44, 24, 255, 255),
+                        title: "The Cyclops",
+                        logoimg: "assets/icons/robot.png",
+                        descrp:
+                            "Cyclops is the ultimate code generator LLM,  turbocharging your development process! 🚀 With intelligent code completion, automated documentation, and bug-busting capabilities, Cyclops is your trusty sidekick for cleaner, faster, and smarter code. 💻✨",
+                      ),
+                    )
+                  : ListView.builder(
+                      reverse: false,
+                      itemCount: ChatProviders.messages.length,
+                      itemBuilder: (context, index) {
+                        final message = ChatProviders.messages[index];
+                        return Messages(
+                          isUser: message.isUser,
+                          message: message.message,
+                          image: message.image,
+                          date: message.date.toString(),
+                        );
+                      },
+                    ),
             ),
             SizedBox(
               height: ScreenUtils.screenHeight(context) / 10,
@@ -85,11 +94,12 @@ class _CyclopsChatScreenState extends State<CyclopsChatScreen> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20), color: Colors.grey[700]),
+              borderRadius: BorderRadius.circular(20), color: Colors.grey[900]),
           child: Row(
             children: [
               Expanded(
                   child: ChatTextField(
+                      barcolor: Color.fromARGB(255, 18, 194, 179),
                       pickedImage: pickedImage,
                       ontap_mic: () {},
                       ontap_img: () async {
@@ -100,7 +110,7 @@ class _CyclopsChatScreenState extends State<CyclopsChatScreen> {
                 padding: const EdgeInsets.all(4.0),
                 child: FloatingActionButton(
                   tooltip: "Send",
-                  backgroundColor: const Color.fromARGB(255, 232, 232, 232),
+                  backgroundColor: Color.fromARGB(255, 18, 194, 179),
                   onPressed: () {
                     // Handle message sending
                     if (pickedImage != null) {

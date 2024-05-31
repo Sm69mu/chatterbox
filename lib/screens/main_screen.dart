@@ -1,3 +1,7 @@
+import 'package:chatterbox/db/chat_db.dart';
+import 'package:chatterbox/providers/gemini_chat_providers.dart';
+import 'package:hive/hive.dart';
+
 import '../constants/lists.dart';
 import '../utils/responsive.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +17,6 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   var currentIndex = 0;
-  
 
   @override
   Widget build(BuildContext context) {
