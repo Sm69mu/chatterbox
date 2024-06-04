@@ -13,14 +13,15 @@ class customChatModelwidget extends StatelessWidget {
     required this.bgcolor,
     required this.icon,
     required this.title,
-    required this.subtitle, required this.ontap,
+    required this.subtitle,
+    required this.ontap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: ScreenUtils.screenHeight(context) / 4,
-      width: ScreenUtils.screenWidth(context) / 1.2,
+      width: ScreenUtils.screenWidth(context) / 1.1,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         gradient: LinearGradient(colors: bgcolor),

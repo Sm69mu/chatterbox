@@ -17,6 +17,6 @@ List<String> listOfStrings = [
 
 List<Widget> listofpage = const [
   HomeScreen(),
-  ChatsScreen(),
+  ChatsListScreen(),
   AccountScreen(),
 ];

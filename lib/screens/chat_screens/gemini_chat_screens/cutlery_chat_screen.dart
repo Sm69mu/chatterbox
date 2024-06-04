@@ -44,7 +44,9 @@ class _DefaulGeminiChatScreenState extends State<CutleryChatScreen> {
           actions: [
             IconButton(
                 tooltip: "Save Chat",
-                onPressed: () {},
+                onPressed: () {
+                  ChatProviders.saveChat(context);
+                },
                 icon: const Icon(
                   Icons.bookmark,
                 ))
@@ -98,9 +100,8 @@ class _DefaulGeminiChatScreenState extends State<CutleryChatScreen> {
             children: [
               Expanded(
                   child: ChatTextField(
-                      barcolor: Color.fromARGB(255, 18, 194, 179),
+                    
                       pickedImage: pickedImage,
-                      ontap_mic: () {},
                       ontap_img: () async {
                         pickedImage = await ChatProviders.pickImage();
                       },
@@ -111,9 +112,7 @@ class _DefaulGeminiChatScreenState extends State<CutleryChatScreen> {
                   tooltip: "Send",
                   backgroundColor: Color.fromARGB(214, 225, 184, 34),
                   onPressed: () {
-                    // Handle message sending
                     if (pickedImage != null) {
-                      // Send the image
                       ChatProviders.sendMessageToGemini(
                         context,
                         pickedImage!,
@@ -121,7 +120,6 @@ class _DefaulGeminiChatScreenState extends State<CutleryChatScreen> {
                         GeminiSystemInsturction.cutlery,
                       );
                     } else {
-                      // Send the text message
                       ChatProviders.sendMessageToGemini(
                         context,
                         messagecontroller.text,

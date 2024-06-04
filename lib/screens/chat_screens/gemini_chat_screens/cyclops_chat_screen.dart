@@ -99,9 +99,7 @@ class _CyclopsChatScreenState extends State<CyclopsChatScreen> {
             children: [
               Expanded(
                   child: ChatTextField(
-                      barcolor: Color.fromARGB(255, 18, 194, 179),
                       pickedImage: pickedImage,
-                      ontap_mic: () {},
                       ontap_img: () async {
                         pickedImage = await ChatProviders.pickImage();
                       },

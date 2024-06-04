@@ -6,19 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ChatTextField extends StatelessWidget {
-  final Color barcolor;
+
   final dynamic ontap_img;
-  final dynamic ontap_mic;
   final TextEditingController messageController;
   final XFile? pickedImage;
 
   const ChatTextField(
       {super.key,
       required this.messageController,
-      required this.ontap_img,
-      required this.ontap_mic,
+       this.ontap_img,
       this.pickedImage,
-      required this.barcolor});
+   });
 
   @override
   Widget build(BuildContext context) {
@@ -39,13 +37,10 @@ class ChatTextField extends StatelessWidget {
                     onPressed: ontap_img,
                     icon: const Icon(Icons.add_circle_outline_rounded),
                   ),
-            suffixIcon: IconButton(
-              onPressed: ontap_mic,
-              icon: const Icon(Icons.mic_none_rounded),
-            ),
+            
             hintText: 'Type your message...',
             border: OutlineInputBorder(
-              borderSide: BorderSide(color: barcolor),
+              
               borderRadius: BorderRadius.circular(20.0),
             ),
           ),

@@ -2,7 +2,7 @@ import 'package:chatterbox/utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../screens/chat_screens/Infrence_chat_screen/inference_chat_screen.dart';
+import '../screens/chat_screens/fusion_brain_screen/inference_chat_screen.dart';
 
 class InferenceWidgetTile extends StatelessWidget {
   const InferenceWidgetTile({super.key});
@@ -58,7 +58,7 @@ class InferenceWidgetTile extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => InferenceChatScreen()));
+                        builder: (context) => FusionBrainScreen()));
               },
               child: Container(
                 alignment: Alignment.center,

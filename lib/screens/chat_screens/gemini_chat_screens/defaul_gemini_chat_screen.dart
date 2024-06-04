@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../gemini/gemini_system_insturction.dart';
 import '../../../utils/responsive.dart';
 import '../../../widgets/chat_text_field.dart';
+import '../../../widgets/def_chat_page.dart';
 import '../../../widgets/message_widget.dart';
 
 class DefaulGeminiChatScreen extends StatefulWidget {
@@ -43,7 +44,9 @@ class _DefaulGeminiChatScreenState extends State<DefaulGeminiChatScreen> {
           actions: [
             IconButton(
                 tooltip: "Save Chat",
-                onPressed: () {},
+                onPressed: () {
+                  ChatProviders.saveChat(context);
+                },
                 icon: const Icon(
                   Icons.bookmark,
                 ))
@@ -60,19 +63,29 @@ class _DefaulGeminiChatScreenState extends State<DefaulGeminiChatScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
-              child: ListView.builder(
-                reverse: false,
-                itemCount: ChatProviders.messages.length,
-                itemBuilder: (context, index) {
-                  final message = ChatProviders.messages[index];
-                  return Messages(
-                    isUser: message.isUser,
-                    message: message.message,
-                    image: message.image,
-                    date: message.date.toString(),
-                  );
-                },
-              ),
+              child: ChatProviders.messages.isEmpty
+                  ? const Center(
+                      child: DefChatPage(
+                        bgcolor: Color.fromARGB(131, 98, 99, 101),
+                        title: "Gemini",
+                        logoimg: "assets/images/google-bard-icon.png",
+                        descrp:
+                            "Your words, amplified. This AI model crafts captivating content, from blog posts to poems, scripts to social captions. ✍️✨ Unleash your creativity, break through writer's block, and explore a universe of language with Gemini as your guide. 🌌🚀",
+                      ),
+                    )
+                  : ListView.builder(
+                      reverse: false,
+                      itemCount: ChatProviders.messages.length,
+                      itemBuilder: (context, index) {
+                        final message = ChatProviders.messages[index];
+                        return Messages(
+                          isUser: message.isUser,
+                          message: message.message,
+                          image: message.image,
+                          date: message.date.toString(),
+                        );
+                      },
+                    ),
             ),
             SizedBox(
               height: ScreenUtils.screenHeight(context) / 10,
@@ -82,14 +95,12 @@ class _DefaulGeminiChatScreenState extends State<DefaulGeminiChatScreen> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20), color: Colors.grey[700]),
+              borderRadius: BorderRadius.circular(20), color: Colors.grey[900]),
           child: Row(
             children: [
               Expanded(
                   child: ChatTextField(
-                    barcolor: Color.fromARGB(255, 18, 194, 179),
                       pickedImage: pickedImage,
-                      ontap_mic: () {},
                       ontap_img: () async {
                         pickedImage = await ChatProviders.pickImage();
                       },

@@ -1,13 +1,10 @@
-import '../../constants/color_pallets.dart';
+import 'package:chatterbox/services/firebase_login.dart';
+
 import '../main_screen.dart';
-import 'register_screen.dart';
 import '../../utils/responsive.dart';
-import '../../widgets/custom_textfeild.dart';
-import '../../widgets/loginwith_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:slide_to_act/slide_to_act.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -37,133 +34,71 @@ class LoginScreen extends StatelessWidget {
                   fontSize: ScaleSize.textScaleFactor(context) * 26,
                   fontWeight: FontWeight.bold),
             ),
-            const SizedBox(
-              height: 10,
-            ),
             SizedBox(
-              height: ScreenUtils.screenHeight(context) / 9,
-              child: customTextfield(
-                  lableTitle: "Email",
-                  hint: "Enter Your Email",
-                  icon: const Icon(
-                    Icons.email,
-                    color: ColorPallets.purpleColor,
-                  )),
+              height: ScreenUtils.screenHeight(context) / 10,
             ),
-            SizedBox(
-              height: ScreenUtils.screenHeight(context) / 9,
-              child: customTextfield(
-                  isPass: true,
-                  lableTitle: 'Password',
-                  hint: "Enter Your Password",
-                  icon: const Icon(
-                    Icons.password_outlined,
-                    color: ColorPallets.purpleColor,
-                  )),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                InkWell(
-                  borderRadius: BorderRadius.circular(18),
-                  onTap: () {},
-                  child: SizedBox(
-                    height: 30,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 18),
-                      child: Text(
-                        'Forget password',
-                        style: GoogleFonts.urbanist(
-                            fontSize: 16, fontWeight: FontWeight.w600),
-                      ),
-                    ),
+            Center(
+              child: Container(
+                width: ScreenUtils.screenWidth(context) - 50,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    gradient: const LinearGradient(colors: [
+                      Color.fromARGB(115, 114, 114, 114),
+                      Color.fromARGB(255, 78, 69, 37)
+                    ])),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "Like talking to a friend, but smarter. Chatterbox Your personal AI assistant for everything",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.urbanist(
+                        fontSize: ScaleSize.textScaleFactor(context) * 19,
+                        fontWeight: FontWeight.w700),
                   ),
-                )
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(14),
-              child: SizedBox(
-                height: ScreenUtils.screenHeight(context) / 12,
-                child: SlideAction(
-                  sliderButtonIconSize: ScreenUtils.screenHeight(context) / 37,
-                  sliderButtonIconPadding: 15,
-                  animationDuration: const Duration(milliseconds: 600),
-                  text: "Slide to Login",
-                  textStyle: GoogleFonts.urbanist(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 22,
-                      color: Colors.white),
-                  outerColor: const Color.fromARGB(255, 89, 82, 211),
-                  elevation: 0,
-                  borderRadius: 18.5,
-                  onSubmit: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const MainScreen()));
-                  },
                 ),
               ),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: ScreenUtils.screenHeight(context) / 10,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  width: ScreenUtils.screenWidth(context) / 6,
-                  height: ScreenUtils.screenHeight(context) / 12.5,
-                  child: loginWithtile(
-                    ontap: (){},
-                      image: Image.asset(
-                    'assets/images/google.256x256.png',
-                  )),
+            Center(
+              child: InkWell(
+                borderRadius: BorderRadius.circular(15),
+                onTap: () {
+                  Auth.signInwithGoogle();
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Container(
+                    height: ScreenUtils.screenHeight(context) / 13,
+                    width: ScreenUtils.screenWidth(context) / 1.4,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.white),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        const Text(
+                          "Login with Google",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 18),
+                        ),
+                        Image.asset(
+                          'assets/images/google.256x256.png',
+                          width: 40,
+                          fit: BoxFit.contain,
+                        )
+                      ],
+                    ),
+                  ),
                 ),
-                const SizedBox(
-                  width: 30,
-                ),
-                SizedBox(
-                  width: ScreenUtils.screenWidth(context) / 6,
-                  height: ScreenUtils.screenHeight(context) / 12.5,
-                  child: loginWithtile(
-                      ontap: () {},
-                      image: Image.asset(
-                          'assets/images/facebook-color.256x256.png')),
-                )
-              ],
+              ),
             ),
             const SizedBox(
               height: 25,
-            ),
-            InkWell(
-              borderRadius: BorderRadius.circular(18),
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => const RegisterScreen(),
-                  ),
-                );
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'New to Chatter Box ? ',
-                    style: GoogleFonts.urbanist(
-                        fontSize: ScaleSize.textScaleFactor(context) * 17,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  Text(
-                    'Register',
-                    style: GoogleFonts.urbanist(
-                        fontSize: ScaleSize.textScaleFactor(context) * 17,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ],
-              ),
             ),
             SizedBox(
               height: ScreenUtils.screenHeight(context) / 10,
