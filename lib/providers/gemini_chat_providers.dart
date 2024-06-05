@@ -63,7 +63,7 @@ class ChatProviders extends ChangeNotifier {
           temperature: 0.9,
           topP: 0.1,
           topK: 16,
-          maxOutputTokens: 700,
+          maxOutputTokens: 800,
         ),
         systemInstruction: Content.system(systemInstruction),
       );

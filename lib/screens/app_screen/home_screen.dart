@@ -44,38 +44,6 @@ class _HomeScreenState extends State<HomeScreen> {
         child: SafeArea(
             child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                InkWell(
-                  onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const AccountScreen()));
-                  },
-                  borderRadius: BorderRadius.circular(30),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey, width: 2),
-                        borderRadius: BorderRadius.circular(40)),
-                    child: Padding(
-                      padding: const EdgeInsets.all(6.0),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: ScreenUtils.screenWidth(context) * 0.01,
-                          ),
-                          Text(_userDetails,
-                              style: GoogleFonts.urbanist(
-                                  fontSize:
-                                      ScaleSize.textScaleFactor(context) * 18,
-                                  fontWeight: FontWeight.w600))
-                        ],
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            ),
             SizedBox(
               height: ScreenUtils.screenHeight(context) * 0.17,
               width: ScreenUtils.screenWidth(context),
@@ -97,8 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: GoogleFonts.urbanist(
                             fontSize: ScaleSize.textScaleFactor(context) * 25,
                             fontWeight: FontWeight.bold,
-                            color: const Color.fromARGB(
-                                255, 168, 94, 233),
+                            color: const Color.fromARGB(255, 168, 94, 233),
                           ),
                         ),
                         TextSpan(

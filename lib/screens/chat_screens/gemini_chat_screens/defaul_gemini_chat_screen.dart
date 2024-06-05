@@ -67,7 +67,7 @@ class _DefaulGeminiChatScreenState extends State<DefaulGeminiChatScreen> {
                   ? const Center(
                       child: DefChatPage(
                         bgcolor: Color.fromARGB(131, 98, 99, 101),
-                        title: "Gemini",
+                        title: "  Gemini",
                         logoimg: "assets/images/google-bard-icon.png",
                         descrp:
                             "Your words, amplified. This AI model crafts captivating content, from blog posts to poems, scripts to social captions. ✍️✨ Unleash your creativity, break through writer's block, and explore a universe of language with Gemini as your guide. 🌌🚀",

@@ -84,12 +84,14 @@ class _AccountScreenState extends State<AccountScreen> {
                     children: [
                       Text(
                         _userDetails,
+                        textAlign: TextAlign.center,
                         style: GoogleFonts.urbanist(
                             fontWeight: FontWeight.bold,
                             fontSize: ScaleSize.textScaleFactor(context) * 17),
                       ),
                       Text(
                         _useremail,
+                        textAlign: TextAlign.center,
                         style: GoogleFonts.urbanist(
                             fontWeight: FontWeight.w600,
                             fontSize: ScaleSize.textScaleFactor(context) * 14),
