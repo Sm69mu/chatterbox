@@ -45,3 +45,7 @@ app.*.map.json
 #api keys
 api_keys.json
 api_keys.dart
+
+
+#system instruct
+/lib/gemini/gemini_system_instruction.dart

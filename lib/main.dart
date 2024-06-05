@@ -23,7 +23,7 @@ Future<void> main() async {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => ChatProviders()),
-      ChangeNotifierProvider(create: (context) => FusionBrainProvider()),
+      // ChangeNotifierProvider(create: (context) => FusionBrainProvider()),
     ],
     child: const MyApp(),
   ));
