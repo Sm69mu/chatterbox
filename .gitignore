@@ -48,4 +48,4 @@ api_keys.dart
 
 
 #system instruct
-/lib/gemini/gemini_system_instruction.dart
+/lib/gemini/gemini_system_insturction.dart
